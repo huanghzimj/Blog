@@ -14,30 +14,7 @@ nodejs-express+mongodb+redis+vue.js+bootstrap+layui+socketio 实现.
 
 
 
-#### 个人信息编辑页
 
-![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/jianli.png)
-
-#### 文章内容页
-
-![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/neirong.png)
-
-#### 平台消息页面
-
-![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/message.png)
-
-#### 个人主页
-
-![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/zhuye.png)
-
-
-#### 数据库截图
-
-![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/sql.png)
-
-#### 后台管理页面
-
-![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/admin.png)
 
 ## 用Node.JS+MongoDB搭建仿知乎论坛博客系统逐行代码分析：
 
@@ -96,3 +73,30 @@ package.json 文件依赖配置包
   node app.js
 ```
 #### 登陆后台(localhost:8082/login) 帐号：333 密码：111
+
+
+
+#### 个人信息编辑页
+
+![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/jianli.png)
+
+#### 文章内容页
+
+![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/neirong.png)
+
+#### 平台消息页面
+
+![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/message.png)
+
+#### 个人主页
+
+![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/zhuye.png)
+
+
+#### 数据库截图
+
+![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/sql.png)
+
+#### 后台管理页面
+
+![](https://raw.githubusercontent.com/huanghzimj/Blog/master/demo/ford-img/admin.png)
