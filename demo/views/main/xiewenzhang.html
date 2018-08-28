@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% block main %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+        .form-1{
+            width: 1400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<form method="post" class="form-1">
+    <div class="form-group">
+        <label class="col-sm-2 control-label" >文章标题</label>
+        <div class="col-sm-4">
+            <input class="form-control" name="title" type="text" placeholder="请输入文章标题"/>
+        </div>
+
+    </div><div class="form-group">
+    <label class="col-sm-2 control-label" >内嵌网页url:</label>
+    <div class="col-sm-4">
+        <input class="form-control"  name="jianjie" type="text" placeholder="url"/>
+    </div>
+
+</div>
+    <fieldset>
+        <div class="form-group">
+            <label for="disabledSelect"  class="col-sm-2 control-label">文章分类</label>
+            <div class="col-sm-10">
+                <select id="disabledSelect" name="rout" class="form-control">
+                    <option>Php</option>
+                    <option>node.js</option>
+                    <option>数据库</option>
+                    <option>程序人生</option>
+                    <option>JavaWeb</option>
+                    <option>C/C++</option>
+                    <option>后台开发</option>
+                    <option>数据库</option>
+                    <option>区块链</option>
+                    <option>软件安装</option>
+                    <option>计算机基础</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <label for="name">文章内容</label>
+        <textarea class="form-control" rows="20" name="wenzhangtext" placeholder="可以使用html标签进行写作"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+
+
+
+
+
+</body>
+</html>

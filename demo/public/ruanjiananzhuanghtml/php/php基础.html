@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../code-light/prism.css">
+    <script src="../code-light/prism.js"></script>
+</head>
+<style>
+ body{
+     background-color: rgba(0, 0, 0, 0.21);
+ }
+    .text1{
+        font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+        color: rgba(15, 9, 16, 0.89);
+    }
+    .text2{
+
+        font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+line-height: 25px;
+        color: rgba(15, 9, 16, 0.89);
+
+    }
+    .center{
+    width: 1200px;
+        margin: 0 auto;
+  }
+    .line-numbers{
+        background-color: black;
+        border-radius: 8px;
+
+    }
+ .htmlcode{
+     width:1200px;
+     height:80px;
+ }
+</style>
+<body>
+<div class="center">
+    <h3 class="text1">1.PHP变量名之前要加美元符号 $ 标识</h3>
+    <p class="text2">
+        PHP是一种弱类型的语言，声明变量或者常量的时候，不需要事先声明变量或者常量的数据类型。PHP预处理器根据变量的值自动确定该变量的数据类型
+    </p>
+    <pre class="line-numbers"><code class="language-php language-css">
+    <?php
+    echo <br/>
+//布尔类型
+$value1=TRUE;
+//True TRue..
+$value2=FALSE;
+//FalSe...
+echo $value1."<br/>";
+echo $value2."<br/>";
+echo "你好!";
+var_dump($value1);
+echo "<br/>";
+var_dump($value2);
+//整型数据
+$value3=100;
+$value4=-0777;
+$value5=-0xEFEF;
+echo "<br/>".$value3."<br/>";
+var_dump($value3);
+//浮点型数据
+$value6=3.1415926;
+echo "<br/>".$value6."<br/>";
+$value7=2E6;//
+echo "<br/>".$value7."<br/>";
+$value8=100.0;
+echo "<br/>".$value8."<br/>";
+var_dump($value8);
+?>
+    </code>
+</pre>
+<div><h1 class="text1">
+    2.PHP字符串使用方法
+</h1>
+    <p class="text2">使用双引号指定的字符串中若出现了变量名(以$开头),变量名会被替换成对应的变量值</p>
+    <p class="text2">使用单引号指定的字符串中若出现了变量名(以$开头),变量名会被当成普通的字符使用</p>
+    <pre class="line-numbers"><code class="language-php language-css">
+//单引号的使用方法
+$teacher='teacher';
+$intro='I\'m a $teacher,you are a studnet!';
+echo $intro."<br/>";
+//双引号的使用方法
+$teacher="teacher";
+$intro="I'm a $teacher,you are a studnet!";
+echo $intro."<br/>";
+echo "<br/>";
+echo "asdfd\nasdfdf\n\nkkkk"."<br/>";
+//单引号里如果出现单引号怎么办? \'
+//单引号里如果出现双引号怎么办? “
+//单引号里可以使用其他转移字符吗?
+$test1='\"\$\n\\\r\t';
+//      \"\$\n\ \r\t
+//双引号里如果出现双引号怎么办? \”
+//双引号里如果出现单引号怎么办? ’
+//双引号支持转义字符吗？
+echo $test1;
+?>
+    </code></pre>
+</div>
+<div>
+    <h1 class="text1">3.一维数组</h1>
+    <p class="text2">PHP创建一维数组的方法:直接将变量声明为数组元素和使用array()语言结构创建数组</p>
+    <pre class="line-numbers"><code class="language-php language-css">
+
+<?php
+   echo <br/>
+//数组的第一种定义方法
+//$arrayname=array(value1,value2,..)
+$studne1=array("张三","广西","相思湖学院",15);
+//echo $studne1;
+echo "<br/>";
+print_r($studne1);
+echo "<br/>";
+var_dump($studne1);
+echo "<br/>----------<br/>";
+//arrayname=array(key1=>value1,...)
+$studne2=array("name"=>"张三","籍贯"=>"广西","学校"=>"相思湖学院","年龄"=>15);
+print_r($studne2);
+echo "<br/>";
+var_dump($studne2);
+echo "<br/>";
+//arrayname[keyn]=valuen;
+$student3["name"]="张三";
+$student3["籍贯"]="广西";
+$student3["年龄"]=15;
+echo "<br/>"."----------"."<br/>";
+print_r($student3);
+echo "<br/>";
+var_dump($student3);
+echo "<br/>";
+?>
+</code>
+</pre>
+
+</div>
+<div>
+  <pre class="line-numbers"><code class="language-php language-css">
+<?php
+   echo <br/>
+$arayname=array(value1,value2,...);
+
+$arrayname["key1"]=value1;
+数组混合定义
+$student=array(8=>"张三","籍贯"=>"广西",85);
+$student["学校"]="相思湖学院";
+echo "<br/>";
+print_r($student);
+echo "<br/>";
+var_dump($student);
+echo "<br/>";
+//如何访问数组的数据元素？
+echo $student["学校"];
+?>
+</code>
+</pre>
+</div>
+<div>
+
+  <pre class="line-numbers"><code class="language-php language-css">
+<?php
+   echo <br/>
+//一维数组第三种定义方法
+//$arrayname[key]=value;//标量属类型
+//$arrayname["张三的信息"]=array("张三","广西");
+//$arrayname["李四的信息"]=array("李四","河北");
+//print_r($arrayname);
+echo "<br/>";
+echo "<br/>";
+var_dump($arrayname);
+?>
+</code>
+</pre>
+
+
+
+</div>
+<div>
+   <h1 class="text1">4.数组的使用方法一</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+         <?php
+          echo <br/>
+//数组的使用方法一
+//一维数组
+$arrayname=array("张三",
+"广西",
+"相思湖学院");
+print_r($arrayname);
+echo "<br/>";
+var_dump($arrayname);
+echo "<br/>";
+echo $arrayname[0]."----".$arrayname[1]."-----".$arrayname[2]."<br/>";
+//二维数组
+$arrayname1=array(array("1",2,3),
+array("2",3,4),
+array("3",4,5));
+print_r($arrayname1);
+echo "<br/>";
+var_dump($arrayname1);
+echo "<br/>";
+print_r($arrayname1[0]);
+echo "<br/>";
+var_dump($arrayname1[0]);
+echo "<br/>";
+echo $arrayname1[0][0];
+echo "<br/>";
+?>
+     </code></pre>
+</div>
+    <div>
+   <h1 class="text1">5.数据类型</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+    <?php
+      echo <br/>
+//NULL数据类型
+$value1=NULL;
+echo $value1."<br/>";
+var_dump($value1);
+echo "<br/>";
+//自定义常量
+define("myname","张三");
+//常量名必须为字符串类型
+//常量值为标量数据类型(布尔类型 整型 浮点型 字符串)
+echo myname;
+echo "<br/>";
+echo __FILE__."<br/>";
+echo __LINE__."<br/>";
+echo PHP_VERSION."<br/>";
+echo PHP_OS."<br/>";
+echo DIRECTORY_SEPARATOR."<br/>";
+?>
+     </code></pre>
+</div>
+    <div>
+   <h1 class="text1">6.数组的使用方法二</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+//数组的使用方法二
+//一维数组
+$arrayname1=array("姓名"=>"张三",
+"年龄"=>18,"籍贯"=>"广西");
+echo "<br/>";
+print_r($arrayname1);
+echo "<br/>";
+var_dump($arrayname1);
+echo "<br/>";
+echo $arrayname1["姓名"]."--".$arrayname1["年龄"]."--".$arrayname1["籍贯"]."<br/>";
+
+//二维数组
+$arrayname2=array("2001001"=>array("年级"=>"大一","专业"=>"计算机","年龄"=>18),
+"2010001"=>array("编号"=>1,"系"=>"国贸","数目"=>20),
+"2011001"=>array("系数"=>3.45,"专业"=>"化工","数目"=>4));
+print_r($arrayname2);
+echo "<br/>-----<br/>";
+var_dump($arrayname2);
+echo "<br/>------<br/>";
+echo $arrayname2["2001001"]["年级"];
+?>
+     </code></pre>
+</div>
+    <div>
+   <h1 class="text1">7.数组的使用方法三</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+
+//数组的使用方法三
+//一维数组
+$myarray1["name"]="张三";
+
+$myarray1["籍贯"]="广西";
+$myarray1["电话"]="111111";
+print_r($myarray1);
+echo "<br/>";
+var_dump($myarray1);
+echo "<br/>";
+echo $myarray1["name"]."--".$myarray1["籍贯"]."--".$myarray1["电话"]."<br/>"."------"."<br/>";
+//二维数组
+$myarray2["name"]=array("姓"=>"张","名"=>"三");
+$myarray2["籍贯"]=array("省"=>"广西","市"=>"南宁");
+$myarray2["电话"]=array("区号"=>"111","号码"=>"3443222");
+print_r($myarray2);
+echo "<br/>-----<br/>";
+var_dump($myarray2);
+echo "<br/>";
+echo $myarray2["name"]["姓"].$myarray2["name"]["名"]."<br/>";
+?>
+     </code></pre>
+</div>
+    <div>
+   <h1 class="text1">8.PHP中常量的使用方法</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+
+//PHP中常量的使用方法
+define("varname","张三");
+echo varname;
+//PHP中变量的使用方法
+$value1="张三";
+$value1=12;
+$value2=3.14;
+
+?>
+     </code></pre>
+</div>
+    <div>
+   <h1 class="text1">9.算数运算符</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+
+         //算数运算符
+$value1=1;
+$value2=2;
+$value3=$value1+$value2;
+echo $value3."<br/>";
+//直接进行运算
+echo "$value1+$value2=",$value1+$value2,"<br/>";
+echo "$value1+$value2=",$value2+$value1,"<br/>";
+echo "-----------<br/>";
+//除数为零 系统warning
+$value4=5;
+$value5=10;
+echo "$value4/$value5=",$value4/$value5,"<br/>";
+
+//递增递减运算符
+$value6=7;
+echo ++$value6,"<br/>";
+echo --$value6,"<br/>";
+$value7=7;
+echo $value7++,"<br/>";//7
+echo $value7--,"<br/>";//8
+echo $value7."<br/>";
+
+// 赋值运算符
+// a+=b   ==   a=a+b;
+// a-=b   ==   a=a-b;
+// a*=b   ==   a=a*b;
+// a/=b   ==   a=a/b;
+// a%=b   ==   a=a%b;
+// a.=b   ==   a=a.b;
+$value8=100;
+$value9=200;
+$value8.=$value9;  // $value8=$value8.$value9
+echo $value8."-----".$value9."<br/>";
+//   zhangsanlisi-----lisi
+//echo里是否支持算数运算
+$myvalue1=1;
+$myvalue2=2;
+echo "$myvalue1+$myvalue2=".$myvalue2+$myvalue1;
+    // "1+2=".2+1
+    // "1+2=2"+1
+    // 1+1
+    // 2
+echo "<br/>";
+?>
+     </code></pre>
+</div>
+    <div>
+   <h1 class="text1">10.判断语句用法</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         /*
+if(表达式){
+//代码块一
+}else{
+//代码块二
+}
+*/
+//=== 全等 值和数据类型都需要考虑
+$value1=5;//整型
+$value2=5.0;//浮点型5
+if($value1===$value2){
+	echo "$value1===$value2<br/>";
+}else{
+	echo "$value1"."不全等"."$value2<br/>";
+}
+//不全等 值 数据类型
+if($value1!==$value2){
+	echo "不全等!<br/>";
+}else{
+	echo "全等!<br/>";
+}
+//下面是逻辑运算符
+$myvalue3=TRUE;
+$myvalue4=FALSE;
+if($myvalue3 and $myvalue4){ //&&
+
+}else{
+
+}
+if($myvalue3 or $myvalue4){ //||
+
+}else{
+
+}
+
+if(!$myvalue3){
+
+}else{
+
+}
+
+if($myvalue3 xor $myvalue4){
+
+}else{
+
+}
+//三目运算符的使用 表达式1？表达式2：表达式3
+//if(表达式1){
+//   return 表达式2；
+//}else{
+//   return 表达式3；
+//}
+$myvalue5=7;
+$myvalue6=5;
+$myvalue7=($myvalue5>$myvalue6)?($myvalue5*$myvalue6):($myvalue6/$myvalue5);
+echo "最大值是:".$myvalue7."<br/>";
+
+?>
+          </code></pre>
+</div> <div>
+   <h1 class="text1">11.位运算符</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         //位运算符
+//&
+$value1=100;
+$value2=50;
+//与运算规则 0&1=0  0&0=0 1&0 1&1
+echo $value1&$value2;//|
+echo "<br/>";
+echo ~$value2;
+echo "<br/>";
+echo $value2<<1;
+echo "<br/>";
+echo $value1>>1;
+echo "<br/>";
+echo $value1^$value2;
+echo "<br/>";
+
+?>
+          </code></pre>
+</div>
+    <div>
+   <h1 class="text1">12.数据类型自动转换</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         //数据类型自动转换
+//布尔类型参与算数运算 +-*/%
+$value1=TRUE;//
+$value2=5;
+$value3=FALSE;//
+echo $value1+$value2; //1+5
+echo "<br/>";
+echo $value3+$value2;//0+5
+echo "<br/>";
+//NULL参与数据运算
+$value4=NULL;
+echo $value4+$value2;   //0+5
+echo "<br/>";
+//整数和浮点数转换  整数=>浮点数
+$value5=3;
+$value6=4.0;
+$value7=$value5+$value6;
+echo $value7;
+echo "<br/>";
+var_dump($value7);
+//非字符串类型转换为字符串类型
+echo $value5.$value6;
+echo "<br/>";
+$value8="hello";
+$value8.=$value5;
+echo $value8;
+
+$value9=TRUE;
+echo $value9."<br/>";
+$value10=FALSE;
+echo $value10."<br/>";
+$value11=NULL;
+echo $value11."<br/>";
+
+//逻辑运算 && and || or xor
+$myname=NULL;//依次去修改$myname的值进行验证
+$myaddress=TRUE;
+if($myname&&$myaddress){
+	echo "均为TRUE";
+}else{
+	echo "$myname 为FALSE";
+}
+echo "<br/>";
+$intval1=10;
+$intval2=3;
+$intval=$intval1/$intval2;
+var_dump($intval);
+?>
+          </code></pre>
+</div>  <div>
+   <h1 class="text1">14.强制类型转换方法一 使用括号来进行转换</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         //强制类型转换方法一 使用括号来进行转换
+$floatval=3.1415926;
+$intval=(int)$floatval;
+var_dump($intval);
+echo "<br/>";
+$strval=(string)$floatval;
+var_dump($strval);
+echo "<br/>";
+//强制类型转换方法二 intval floatval strval
+//参见课件
+//强制类型转换方法三 bool settype(valuetype value,string newtype)
+$str1="123.456abndsd";
+echo "数据转换前为:$str1<br/>";
+if(settype($str1,"float")){
+	echo "数据转换成功!<br/>";
+	echo "数据转换为:$str1";
+}else{
+	echo "数据转换失败!<br/>";
+}
+?>
+          </code></pre>
+</div><div>
+   <h1 class="text1">15.流程控制</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         //流程控制
+//if
+$scor=75;
+
+90-100 优
+80-90 良
+70-80 中
+60-70 及格
+0-60 不及格
+
+//if
+if($scor<60){
+	echo "成绩不合格!<br/>";
+	exit;
+}
+if($scor<70){
+	echo "成绩及格!<br/>";
+	exit;
+}
+if($scor<80){
+	echo "成绩中等!<br/>";
+	exit;
+}
+if($scor<90){
+	echo "成绩良!<br/>";
+	exit;
+}
+if($scor<100){
+	echo "成绩优秀!<br/>";
+	exit;
+}
+
+//if else
+if($scor>100){
+	echo "成绩输入有误!(0-100)<br/>";
+}else{//<=100
+	if($scor>90){//90-100
+		//优秀
+		echo "成绩优秀!<br/>";
+	}else{//<90
+		if($scor>80){//80-90
+			echo "成绩良!<br/>";
+		}else{//<80
+			if($scor>70){//70-80
+				echo "成绩中等!<br/>";
+			}else{//<70
+				if($scor>60){//60-70
+					echo "成绩及格!<br/>";
+				}else{
+					//不及格
+					echo "成绩不及格!<br/>";
+				}
+			}
+		}
+	}
+}
+
+//if elseif ... else
+if($scor>100){
+	//非法数据
+	echo "请输入合法数据(0-100)!<br/>";
+}elseif($scor>90){//增加分支选择
+	echo "成绩优秀!$scor<br/>";
+}elseif($scor>80){
+	echo "成绩良!$scor<br/>";
+}elseif($scor>70){
+	echo "成绩一般!$scor<br/>";
+}elseif($scor>60){
+	echo "成绩及格!$scor<br/>";
+}else{//不及格
+	echo "成绩不及格!$scor<br/>";
+}
+?>
+          </code></pre>
+</div><div>
+   <h1 class="text1">16.switch case 用法</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         $value=56;
+/*
+90-100 优  9-10
+80-90 良   8-9
+70-80 中   7-8
+60-70 及格 6-7
+0-60 不及格0-6
+*/
+$val=$value/10;
+var_dump($val);
+echo "<br/>";
+//settype($val,"int");
+switch((int)$val){
+	case 9:
+	//优秀
+	echo "成绩优秀!$value<br/>";
+	break;
+	case 8:
+	//良
+	echo "成绩良!$value<br/>";
+	break;
+	case 7:
+	//中
+	echo "成绩中等!$value<br/>";
+	break;
+	case 6:
+	//及格
+	echo "成绩及格!$value<br/>";
+	break;
+	case 5:
+	case 4:
+	case 3:
+	case 2:
+	case 1:
+	case 0:
+	//不及格
+	echo "成绩不及格!$value<br/>";
+	break;
+	default:
+	//数据非法
+	echo "请输入合法数据!$value<br/>";
+}
+?>      </code></pre>
+</div><div>
+   <h1 class="text1">17.while循环用法</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         //while循环
+//while(条件表达式){
+//}
+$value=0;
+while($value<100){
+	echo $value."<br/>";
+	$value++;
+}
+//do  while循环
+//do{
+//}while(条件表达式);
+$value=0;
+do{
+	echo $value."<br/>";
+	$value++;
+}while($value<100);
+
+//for循环
+//for(条件表达式1,条件表达式2,条件表达式3){
+//}
+for($value=0;$value<100;$value++){
+	echo $value."<br/>";
+}
+         //偶数和
+$value=0;
+$sum=0;
+while($value<=5000){
+	$sum+=$value;
+	$value+=2;
+}
+echo "0-5000的和为:$sum<br/>";
+$value=0;
+$sum=0;
+do{
+	$sum+=$value;
+	$value+=2;
+}while($value<=5000);
+echo "0-5000的和为:$sum<br/>";
+$value=0;
+$sum=0;
+for(;$value<=5000;){
+	$sum+=$value;
+	$value+=2;
+}
+echo "0-5000的和为:$sum<br/>";
+//九九乘法表
+for($i=1;$i<=9;$i++){
+	for($j=1;$j<=$i;$j++){
+		echo "{$j}*{$i}=".($i*$j)." ";
+	}
+	echo "<br/>";
+}
+?>
+
+     </code></pre>
+</div><div>
+   <h1 class="text1">18.include引入外部文件</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         include("./2018-03-21-4.php");
+$value=include_once("./2018-03-21-4.php");
+echo "<br/>这里是本文件的内容<br/>";
+echo "$value"."<br/>";
+var_dump($value);
+echo "<br/>";
+echo gettype($value);
+
+?>   </code></pre>
+</div><div>
+   <h1 class="text1">19.php九九乘法表</h1>
+     <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+         echo "九九乘法表!<br/>";
+echo "<table border=\"1\">";
+for($i=1;$i<=9;$i++){//行
+	echo "<tr>";
+	for($j=1;$j<=$i;$j++){//列
+		echo "<td>{$i}*{$j}=".($i*$j)."</td>";
+	}
+	echo "</tr>";
+}
+echo "</table>";
+echo "<br/>foreach:<br/>";
+$myarr=array("张三","广西","139000");
+foreach($myarr as $valu){//参数均为自定义的变量名
+	echo "$valu ";
+}
+echo "<br/>";
+foreach($myarr as $key=>$value){//参数均为自定义的变量名
+	echo "$key $value <br/>";
+}
+echo "<br/>";
+//二维数组的foreach操作
+$userinfos=array("一班"=>array("姓名"=>"张三","邮箱"=>"zhangsan@126.com"),
+"二班"=>array("姓名"=>"李四","邮箱"=>"lisi@126.com"));
+foreach($userinfos as $value){
+	//获取所有人姓名
+	echo "<br/>{$value["姓名"]}<br/>";
+	print_r($value);
+	echo "<br/>";
+}
+foreach ($userinfos as $key => $value) {
+	//
+}
+?>  </code></pre>
+</div>
+
+    <div>
+        <h1 class="text1">20.PHP调用函数</h1>
+        <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+            //调用函数
+myfunc(1,2,3);
+myfunc("address","mobile","email");
+myfunc(1,2,"name");
+?>
+
+            <?php
+//自定义函数
+function myfunc($para1,$para2,$para3){//无参数的函数
+echo "{$para1} $para2 $para3";
+echo "九九乘法表!<br/>";
+echo "<table border=\"1\">";
+for($i=1;$i<=9;$i++){//行
+	echo "<tr>";
+	for($j=1;$j<=$i;$j++){//列
+		echo "<td>{$i}*{$j}=".($i*$j)."</td>";
+	}
+	echo "</tr>";
+}
+echo "</table>";
+}
+//函数内部操作函数体外的变量
+$value1=100;
+function myfunc1($para){
+	$para+=1;
+	echo "值传递函数体内的值为:$para<br/>";
+	return 0;
+}
+
+function myfunc2(&$para){
+	global $value1;//告诉PHP解释器 $value1是全局变量
+	//global的时候不可以给全局变量赋值
+	//只能在函数体内使用global
+	echo $value1;//能否打印成功?
+	$para+=1;
+	echo "引用函数体内的值为:$para<br/>";
+}
+$v1=myfunc1($value1);
+echo "<br/>".$v1."<br/>";
+echo "$value1"."<br/>";
+myfunc2($value1);
+echo "$value1"."<br/>";
+
+?>
+        //外部文件
+
+include("2018-03-23-functions.php");
+//require include_once require_once
+//调用函数
+myfunc(100);
+myfunc(100,200);
+
+staticfunc();
+staticfunc();
+staticfunc();
+
+        </code></pre>
+    </div>
+
+    <div>
+        <h1 class="text1">23.变量</h1>
+        <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+            //全局变量
+$number=100;
+
+function myfunc($value1,$value2=0){
+   global $number;
+   echo "函数体内访问到的全局变量值为:$number<br/>";
+   echo "<br/>".$value1."---"."$value2";
+   return 0;//
+}
+
+function  staticfunc(){
+	static $i=100;
+	$i--;
+	echo "<br/>".$i."<br/>";
+}
+?>  </code></pre>
+    </div>
+    <div>
+        <h1 class="text1">24.get方式提交数据</h1>
+        <p class="text2"> userInfo. html内容</p>
+
+            <textarea class="htmlcode">
+	<a href="Userinfos.php?username=张三&address=广西南宁西乡塘区&mobile=12393838&password=123456">点击获取张三的信息</a><br/><br/>
+
+	<a href="Userinfos.php?username=李四&address=河北省石家庄市&mobile=153444444&password=567890">点击获取李四的信息</a>  </textarea>
+        <p class="text2"> userInfo. php</p>
+        <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+            //username address mobile password
+//isset
+$username=$_GET["username"];
+$address=$_GET["address"];
+$mobile=$_GET["mobile"];
+$password=$_GET["password"];
+
+
+
+if(isset($username)){ //检测是否被定义
+	echo "{$username}定义了!<br/>";
+}else{
+	echo '变量$name未定义!'."<br/>";
+}
+echo "用户名:".$address."<br/>";
+echo "用户名:".$mobile."<br/>";
+echo "用户名:".$password."<br/>";
+?>
+
+           </code>
+        </pre>
+    </div>
+    <div>
+        <h1 class="text1">25.post方式提交数据</h1>
+        <p class="text2"> Register. html内容</p>
+
+            <textarea class="htmlcode">
+	<form action="Register.php" name="registeraction" method="post">
+
+	 用户名:<input type="text" name="username" size="30"/><br/><br/>
+
+	 密&nbsp;&nbsp;码:<input type="password" name="password" size="30"/><br/><br/>
+
+	 性&nbsp;&nbsp;别:<input type="radio" name="xingbie" value="男" checked="checked">男 &nbsp;&nbsp;<input type="radio" name="xingbie" value="女">女 &nbsp;&nbsp;<br/><br/>
+
+	 爱&nbsp;&nbsp;好:
+	 <input type="checkbox" name="aihao[]" value="跑步" checked="checked">跑步&nbsp;&nbsp;
+	 <input type="checkbox" name="aihao[]" value="骑术">骑术&nbsp;&nbsp;
+	 <input type="checkbox" name="aihao[]" value="武术">武术&nbsp;&nbsp;<br/><br/>
+
+	 籍&nbsp;&nbsp;贯:
+	 <select name="jiguan">
+	 	<option value="广西" selected="selected">广西壮族自治区</option>
+	 	<option value="河北">河北省</option>
+	 	<option value="湖南">湖南省</option>
+	 </select><br/><br/>
+用户协议:<br/>
+<textarea name="xieyi" rows="10" cols="8">
+一、总则
+1.1 保宝网的所有权和运营权归深圳市永兴元科技有限公司所有。
+1.3 本协议则解释及争议的解决均应适
+8.2 如本协议中的任何条款无论因何种原因完全或部分无效或不具有执行力，本协议的其余条款仍应有效并且有约束力。
+8.3 本协议解释权及修订权归深圳永兴元科技有限公司所有。
+</textarea>
+
+	 <input type="reset" name="reset" value="点击重置"> &nbsp;&nbsp;&nbsp;
+
+	 <input type="submit" name="submit" value="提交"><br/>
+        <!--
+        get post
+        input type:text password radio checkbox reset submit......
+   -->
+</form>  </textarea>
+        <p class="text2"> Register. php</p>
+        <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+            //GET获取数据  $_GET[]  form表单内容小于2084字节
+echo "获取用户名:".$_GET["username"]."<br/>";
+echo "获取密码:",$_GET["password"]."<br/>";
+*/
+//POST获取数据  $_POST[]  传输的数据大小不做限制
+echo "获取用户名:".$_POST["username"]."<br/>";
+echo "获取密码:",$_POST["password"]."<br/>";
+
+echo "获取性别:".$_POST["xingbie"]."<br/>";
+
+echo "爱好为:";
+
+foreach ($_POST["aihao"] as $key => $value) {
+	echo $value." ";
+}
+
+echo "<br/>籍贯为:".$_POST["jiguan"]."<br/>";
+
+echo "协议为:<br/>".$_POST["xieyi"]."<br/>";
+
+echo "注册了!<br/>";
+?>
+           </code>
+        </pre>
+    </div>
+
+
+
+    <div>
+        <h1 class="text1">26.百马百担问题</h1>
+        <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+
+//百马百担问题
+for($i=0;$i<=33;$i++){//大马
+	for($j=0;$j<=50;$j++){//中马
+		for($k=0;$k<=100;){//小马
+			if(($i+$j+$k==100)&&($i*3+$j*2+$k/2==100)){//满足条件
+				echo "大马{$i} 中马{$j} 小马{$k}<br/>";
+			}
+			$k+=2;//小马增加
+		}
+	}
+}
+//冒泡排序10个元素
+$myarr=array(9,45,22,35,7,98,60,75,50,49);
+echo "<br/>比对前的数组元素为:";
+foreach($myarr as $value){
+	echo "$value ";
+}
+echo "<br/>排序中<br/>";
+for($i=0;$i<10;$i++){//比对元素循环
+	for($j=$i;$j<10;$j++){
+		if($myarr[$i]<$myarr[$j]){
+			$temp=$myarr[$j];
+			$myarr[$j]=$myarr[$i];
+			$myarr[$i]=$temp;
+		}
+	}
+}
+echo "<br/>比对后的数组元素为:";
+foreach($myarr as $value){
+	echo "$value ";
+}
+echo "<br/>";
+//百分制成绩问题
+$value=86;
+switch((int)($value/10)){
+	case 10:
+	case 9:
+	echo "A<br/>";
+	break;
+	case 8:
+	echo "B<br/>";
+	break;
+	case 7:
+	echo "C<br/>";
+	break;
+	case 6:
+	echo "D<br/>";
+	break;
+	default:
+	echo "E<br/>";
+}
+//小球落地问题
+$hight=100;//起始高度
+$sum=0;//通过的路径长度
+for($i=1;$i<=10;$i++){
+//打印出十次路径长度和高度
+if($i==1){//第一次
+	$hight=100;
+	$sum=$hight;
+}else{//第n次
+	$sum=$sum+$hight;
+	$hight/=2;
+}
+//注意这里的$hight表示的是每次跳跃的起始高度
+$fhight=$hight/2;
+echo "第{$i}次的路径长度为:{$sum} 起始高度为:{$hight} 反弹高度为:{$fhight}<br/>";
+}
+?>
+
+  </code></pre>
+    </div>
+
+
+    <div>
+        <h1 class="text1">28.post注册提交</h1>
+        <textarea class="htmlcode">
+
+            <h1>填写注册信息</h1>
+<form action="" method="post" enctype="multipart/form-data">
+用户名:<input type="text" name="username"><br/><br/>
+手机号:<input type="text" name="mobile"><br/><br/>
+密码:<input type="password" name="password"><br/><br/>
+上传文件:<input type="file" name="upfile"><br/><br/>
+<input type="reset" name="reset" value="重置">&nbsp;&nbsp;
+<input type="submit" name="submit" value="注册"><br/><br/>
+</form>
+        </textarea>
+        <pre class="line-numbers"><code class="language-php language-css">
+  <?php
+   echo <br/>
+
+if(isset($_POST["submit"])&&$_POST["submit"]=="注册"){
+	//上传文件信息
+	var_dump($_FILES);
+	echo "<br/>-------<br/>";
+	foreach($_FILES as $key=>$value){
+	   echo "{$key}的值为:<br/>";
+	   foreach($_FILES[$key] as $ke=>$valu){
+	   	echo "{$ke}:{$valu}<br/>";
+	   }
+	}
+	//移动缓存文件到制定的目录下去
+	//filename表示待移动的文件名
+	//destination表示移动到的目的目录
+	//判定一下上传文件是否存在以及destination是否存在同名文件
+	if(!empty($_FILES[$key]["name"])){//判断是否选择了上传文件
+	$pathname=__DIR__."\\".$_FILES[$key]["name"];//制定上传文件路径以及名字
+	if(file_exists($pathname)){
+		//服务器上文件存在
+		echo "文件存在!<br/>";
+	}else{
+		//文件不存在可以上传
+		move_uploaded_file($_FILES[$key]["tmp_name"],$pathname);
+		$uploadfileno=$_FILES[$key]["error"];
+		switch($uploadfileno){
+			case 0:
+			echo "没有出错,上传文件成功!<br/>";
+			break;
+			case 1:
+			echo "文件太大了,需要修改php.ini文件中的upload_max_filesize的值!<br/>";
+			break;
+			case 2:
+			echo "上传文件大小超过了html表单规定的最大值!<br/>";
+			break;
+			case 3:
+			echo "文件上传部分(断点续传实现)<br/>";
+			break;
+			case 4:
+			echo "没有文件被上传<br/>";
+			break;
+			case 6:
+			echo "move_uploaded_file第一个参数指定有问题，找不到指定文件<br/>";
+			break;
+			case 7:
+			echo "文件写入失败,可能是系统权限问题!<br/>";
+			break;
+			default:
+			echo "未知的错误!错误码为:{$uploadfileno}<br/>";
+		}
+	    echo "<br/>destination:{$pathname} <br/>-------<br>";
+	}
+}else{
+	echo "请选择上传文件上传!<br/>";
+}
+
+	//用户信息
+	$username=$_POST["username"];
+	$mobile=$_POST["mobile"];
+	$password=$_POST["password"];
+	echo "<table border='1'>";
+	echo "<tr>";
+	echo "<td>用户名</td>";
+	echo "<td>手机号</td>";
+	echo "<td>密码</td>";
+	echo "</tr>";
+	for($i=1;$i<5;$i++){
+		echo "<tr>";
+		echo "<td>{$username}</td>";//用户名
+		echo "<td>{$mobile}</td>";
+		echo "<td>{$password}</td>";
+		echo "</tr>";
+    }
+    echo "</table>";
+}else{
+	echo "请点击注册按钮进行验证!<br/>";
+}
+?>  </code></pre>
+    </div>
+
+    <div><h1 class="text1">
+        29.Post登录
+    </h1>
+        <textarea class="htmlcode">
+            	<title>登录功能测试</title>
+            </head>
+            <body>
+<form action="" method="post">
+用户名:<input type="text" name="username"><br/><br/>
+密&nbsp;&nbsp;码:<input type="password" name="password"><br/><br/>
+<input type="reset" name="reset" value="重置">&nbsp;&nbsp;
+<input type="submit" name="submit" value="登录"><br/><br/>
+</form>
+<a href="./zhuce.php">点击进行注册</a><br/>
+        </textarea>
+
+        <pre class="line-numbers"><code class="language-php language-css">
+
+if(isset($_POST["submit"])&&$_POST["submit"]=="登录"){//限制的条件
+$username=$_POST["username"];
+$password=$_POST["password"];
+//查找数据库，看数据库里是否存在满足条件的记录
+//如果存在 登录成功 跳转到主界面
+//如果不存在 登录失败 提示用户
+echo "测试程序!{$username} {$password} <br/>";
+}
+?>
+ </code></pre>
+    </div>
+    <div>
+        <h1 class="text1">
+        30.php操作MySql数据库
+            </h1>
+        <pre class="line-numbers"><code class="language-php language-css">
+PHP操作mysql数据库
+1. mysql
+2. mysqli-面向对象思想的体现
+3. PDO
+*/
+//mysql数据库的使用
+//第一步 定义一些常量表示当前的一些配置信息
+define("DBHOST","localhost:3306");
+//数据库的IP地址 格式: IP地址:3306
+define("DBUSER","root");//使用数据库的名字
+define("DBPASSWD","root");//使用数据库的密码
+define("DBNAME","mydb1");//待操作的数据库
+
+//第二步 开始操作数据库
+//建立数据库连接
+$connection=mysql_connect(DBHOST,DBUSER,DBPASSWD);
+//$connection代表的是数据库资源 注意其数据类型
+if(!$connection){
+	//没有创建成功
+	echo "数据库链接创建失败:".mysql_error()."<br/>";
+	//mysql_error反回的是最近一次操作mysql数据库的错误信息
+	exit;
+}
+//创建数据库链接已经完成
+//设置数据库的编码格式
+$result=mysql_query("set names utf8");
+//第二个参数默认使用最近一次创建的数据库链接 如果存在多个数据库的链接 我们需要制定数据库资源
+//mysql数据库操作的时候，系统做了一些优化，相同host下的数据库每个进程只能建立一个链接
+//此次设置编码格式是临时的 如果有多个用户在访问，不会影响其他人 只是当前进程临时受影响
+if(!$result){
+	echo "设置编码格式失败:".mysql_error()."<br/>";
+	exit;
+}else{
+	echo "当前链接的编码为:".mysql_client_encoding()."<br/>";
+}
+//选择数据库
+if(!mysql_select_db(DBNAME)){
+	echo "选择数据库:".DBNAME."失败:".mysql_error()."<br/>";
+	exit;
+}
+//执行命令
+//创建表
+$createtablesql="create table if not exists student(id int not null auto_increment primary key,name varchar(30),birthday datetime)";
+$result=mysql_query($createtablesql,$connection);
+if($result){
+	echo "创建student表成功<br/>";
+}else{
+	echo "执行createtablesql失败:".mysql_error()."<br/>";
+	exit;
+}
+
+//插入记录
+$name="张三".rand(1000,9999);
+//rand函数获取介于 1000和9999之间的随机数
+date_default_timezone_set("UTC");
+$birthday=date("Y-m-d H:m:s");
+//获取当前的系统时间
+$inserttablesql="insert into student(name,birthday) values('$name','$birthday')";
+$result=mysql_query($inserttablesql);
+if(!$result){
+	echo "执行插入记录的时候出错:".mysql_error()."<br/>";
+	exit;
+}
+
+//查询记录
+$selecttablesql="select * from student";
+$result=mysql_query($selecttablesql);
+if(!$result){
+	echo "执行查询语句失败:".mysql_error()."<br/>";
+	exit;
+}
+//遍历一下上面的$result结果集
+//mysql_fetch_array  mysql_fetch_row和mysql_fetch_assoc
+//第一种方法 mysql_fetch_row
+while($row=mysql_fetch_row($result)){
+	//结果集中的元素的主键是数字
+	//var_dump($row);
+	foreach($row as $key=>$value){
+		echo "{$key}:{$value}<br/>";
+	}
+	echo "<br/>----------<br/>";
+}
+echo "<BR/>#######<be/>";
+// 第二种方法 mysql_fetch_array
+mysql_data_seek($result,0);
+while($row=mysql_fetch_array($result,MYSQL_NUM)){
+	//MYSQL_ASSOC 表属性数组
+	//MYSQL_NUM 表示数字数组
+	//MYSQL_BOTH 默认是都包含
+	var_dump($row);
+	echo "<br/>";
+	foreach($row as $key=>$value){
+		echo "{$key}:{$value}<br/>";
+	}
+	echo "<br/>----------<br/>";
+}
+echo "<br/>#########<br/>";
+mysql_data_seek($result,0);//结果集当前元素恢复原状位置0
+// 第三种访问方法 mysql_fetch_assoc
+while($row=mysql_fetch_assoc($result)){
+	//获取到的就是关联数组(表属性数组)
+	foreach($row as $key=>$value){
+		echo "{$key}:{$value}<br/>";
+	}
+	echo "<br/>----------<br/>";
+}
+//更新记录
+//删除记录
+?>
+
+
+            //$_SERVER数组遍历
+// foreach($_SERVER as $key=>$value){
+// 	echo "{$key}:{$value}<br/>";
+// }
+// echo "<br/>------<br/>";
+// echo $_SERVER["PHP_SELF"];
+//$_ENV数组遍历
+echo "<br/>";
+foreach($_ENV as $key=>$value){
+	echo "{$key}:{$value}<br/>";
+}
+echo "<br/>";
+?>
+ </code></pre>
+    </div>
+</div>
+</body>
+
+<script>
+    window.prettyPrint();
+</script>
+</html>

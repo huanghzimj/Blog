@@ -1,0 +1,158 @@
+body{
+    background-color: rgb(246,246,246);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.biaodan-top{
+    width: 1200px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #9aa4af;
+
+}
+.biaodan-top-img{
+    width: 1200px;
+    height: 200px;
+    border-radius: 10px;
+}
+.biaodan{
+    width: 1200px;
+
+    position: absolute;
+    top: 80px;
+    left: 125px;
+
+}
+.biaodao-beijing{
+    width: 1200px;
+    height: 1200px;
+    background-color:white;
+}
+.biaodan-tou{
+    border-radius:10px;
+    position: absolute;
+    top:175px;
+    left: 30px;
+    width: 194px;
+    height: 184px;
+    background-color: white;
+}
+.biaodan-touxiang{
+    width: 190px;
+    height: 180px;
+    border-radius:10px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+
+}
+.ProfileHeader-name{
+    position: absolute;
+    left: 250px;
+    top: 220px;
+    font-family: 微软雅黑;
+    font-size: 25px;
+}
+.fanhuizhuye{
+
+    position: absolute;
+    right: 50px;
+    top: 223px;
+    font-family: 微软雅黑;
+    font-size: 18px;
+    color: #9aa4af;
+    text-decoration: none;
+}
+.nerong-box{
+    background-color: white;
+    position: absolute;
+    top: 305px;
+    left: 250px;
+    width: 950px;
+    height:1222px;
+}
+.form-group{
+    /*background-color: lightskyblue;*/
+    height: 45px;
+    position: relative;
+
+
+}
+.form-group div{
+    float: left;
+}
+.form-group1{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.form-group1 span{
+    font-size: 15px;
+    font-family: 微软雅黑;
+
+}
+.form-group2{
+
+    margin-top: 5px;
+    position: absolute;
+    left: 100px;
+}
+.form-control{
+    width: 350px;
+}
+.tijiao{
+    position: absolute;
+    left: 850px;
+    top: 820px;
+    width: 200px;
+    height: 80px;
+    font-size: 35px;
+    background-color: rgb(0,132,255);
+    color: white;
+}
+.tijiao:hover{
+    background-color: rgb(0,132,255);
+    color: white;
+}
+.xiugaitouxiang{
+    position: absolute;
+    left: 50px;
+    top: 380px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    background-color: rgb(0,132,255);
+
+}.xiugaitouxiang:hover{
+
+    background-color: rgb(0,102,255);
+
+
+}
+.xiugaitouxiang a{
+
+    color: white;
+}
+
+.genggaibeijing{
+       position: absolute;
+       left: 980px;
+       top: 150px;
+       width: 140px;
+       height: 35px;
+       font-size: 18px;
+    background-color: rgb(255,209,40);
+    color: #444;
+
+    border: 1px solid #ffd100;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.genggaibeijing a{
+    text-decoration: none;
+    color: black;
+    font-family: 微软雅黑;
+}

@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<ol class="breadcrumb">
+  <li><a href="/">管理首页</a></li>
+  <li><span>用户列表</span></li>
+</ol>
+
+<h3>用户列表</h3>
+
+
+<table class="table table-hover table-striped">
+  <tr>
+
+    <th>账号</th>
+    <th>用户名</th>
+    <th>密码</th>
+    <th>性别</th>
+    <th>手机号</th>
+    <th>血型</th>
+    <th>简介</th>
+    <th>地址</th>
+    <th>邮箱</th>
+    <th>qq</th>
+    <th>访问量</th>
+    <th>原创量</th>
+    <th>粉丝数</th>
+    <th>喜欢</th>
+    <th>回答数</th>
+    <th>排名</th>
+    <th>积分</th>
+
+    <th>是否是管理员</th>
+    <th>操作</th>
+  </tr>
+  {% for user in users %}
+  <tr>
+
+    <td>{{user.username}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.sex}}</td>
+    <td>{{user.telephone}}</td>
+    <td>{{user.xuexing}}</td>
+    <td>{{user.intro}}</td>
+    <td>{{user.address}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.qq}}</td>
+    <td>{{user.fanwen}}</td>
+    <td>{{user.yuanchuang}}</td>
+    <td>{{user.fensi}}</td>
+    <td>{{user.xihuan}}</td>
+    <td>{{user.huida}}</td>
+    <td>{{user.paiming}}</td>
+    <td>{{user.jifen}}</td>
+    <td>
+      {% if user.isAdmin %}是{% endif %}
+    </td>
+    <td>
+      <a href="/admin/user/edit?id={{user._id.toString()}}">编辑</a> |
+      <a href="/admin/user/delete?id={{user._id.toString()}}">删除</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% include 'page.html' %}
+
+{% endblock %}

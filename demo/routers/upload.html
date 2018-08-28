@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<body>
+<!--enctype定义提交的数据类型-->
+<!--multipart/form-data 提交的数据格式 提交的数据是二进制-->
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" value="请选择上传文件" name="file">
+    <input type="hidden" id="contentId" value="{{userInfo._id}}">
+    <input type="submit" id="Btnsumbit" value="提交文件"/>
+</form>
+
+<script>
+    $('#Btnsumbit').on('click', function() {
+        $.ajax({
+            type:'POST',
+            url:'/upload',
+            data:{
+
+                id : $('#contentId').val(),
+
+            }
+
+        })
+    });
+</script>
+
+
+</body>
+</html>

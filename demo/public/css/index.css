@@ -1,0 +1,453 @@
+body{
+    background-color: rgb(245,246,247);
+}
+.zhuye-left{
+  position: absolute;
+    margin-top: 2px;
+
+    height: 1080px;
+    width: 300px;
+}
+.yemianneirong{
+    position: absolute;
+    left: -20px;
+    top:45px
+}
+
+.user_info .span-8{
+    color: #bbb;
+}
+.user_info .span-8 span{
+    color: #69e373;
+}
+.inf_number_box .clearfix-dl1 dt,.clearfix-dl2 dt,.clearfix-dl3 dt,.clearfix-dl4 dt{
+    color: #bbb;
+} .inf_number_box .clearfix-dl1 dd,.clearfix-dl2 dd,.clearfix-dl3 dd,.clearfix-dl4 dd{
+
+  }
+.user_info-name .name a{
+    color: black;
+    text-decoration: none;
+    font-family: 'PingFang SC','Microsoft YaHei',SimHei,Arial,SimSun;
+    color: white;
+} .user_info-name .name a:hover{
+      color: rgb(211,111,22);
+  }
+
+.user_info{
+  border-radius: 7px;
+    border-top:solid #faf849;
+    width: 300px;
+    height: 350px;
+z-index: 999;
+    top:50px;
+    position: absolute;
+ background-color: rgb(51,47,73);
+
+    z-index: 999;
+}
+.user_info .avatar_pic{
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+.clearfix dd{
+    color: #bbf7ff;
+    border-radius: 5px;
+}.clearfix button{
+background-color: yellow;
+    color: #6dd8ff;
+}
+.clearfix .user_info-name{
+    position: absolute;
+    top: 10px;
+    left: 95px;
+}
+.clearfix dl{
+    position: absolute;
+    top: 110px;
+    font-family: 'PingFang SC','Microsoft YaHei',SimHei,Arial,SimSun;
+
+}
+.clearfix .clearfix-dl1{
+    left: 25px;
+    font-weight:bold
+}
+.clearfix .clearfix-dl2{
+    left: 95px;
+    font-weight:bold
+}
+.clearfix .clearfix-dl3{
+    left: 165px;
+    font-weight:bold
+}
+.clearfix .clearfix-dl4{
+    left: 245px;
+    font-weight:bold
+}
+.user_info .xian{
+    position: absolute;
+    top: 145px;
+    width: 100%;
+    height:1px
+;border:none;
+    border-top:1px solid #d6d6d6;
+
+}
+.user_info-name .btn-redborder-small{
+    color: black;
+    font-family: 'PingFang SC','Microsoft YaHei',SimHei,Arial,SimSun;
+
+
+
+}  .user_info-name .btn-redborder-small:hover{
+       color: red;
+
+   }
+.user_info .fanwenliang{
+    position: absolute;
+    top: 175px;
+    left: 20px;
+    font-family: 'PingFang SC','Microsoft YaHei',SimHei,Arial,SimSun;
+
+}
+.user_info .paiming{
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    font-family: 'PingFang SC','Microsoft YaHei',SimHei,Arial,SimSun;
+
+}
+.user_info .jifen{
+    position: absolute;
+    top: 225px;
+    font-family: 'PingFang SC','Microsoft YaHei',SimHei,Arial,SimSun;
+    left: 20px;
+
+}
+.zhuye-left .tuijian-box{
+    background-color: rgba(58, 250, 51, 0.04);
+    height: 820px;
+    width: 300px;
+    top: 500px;
+    position: absolute;
+
+}
+.zhuye-left .tuijian-box h5{
+    line-height: 25px;
+ left: 3px;
+    position: absolute;
+}
+.zhuye-left .tuijian-box .kuang{
+    border-left: 3px solid #d22222;
+    width: 300px;
+    height: 25px;
+    left: 10px;
+
+    position: absolute;
+}
+.zhuye-left .tuijian-box .kuang button{
+    right: 16px;
+    position: absolute;
+
+
+
+
+}
+.zhuye-left .tuijian-box .kuang-nerong{
+
+    width: 295px;
+    height: 800px;
+    position: absolute;top: 35px;
+    left: 5px;
+}
+.zhuye-left .liebiao-father{
+ padding-top:10px;
+
+}
+.zhuye-left .liebiao-father div {
+    float: left;
+
+}
+ .liebiao-father .lebiao-left{
+    width: 200px;
+     height: 80px;
+
+
+}
+.zhuye-left .liebiao-father .lebiao-right{
+    width: 95px;
+
+      height:80px;
+}.zhuye-left .liebiao-father .lebiao-right img{
+     height: 75px;
+     width: 86px;
+    padding: 6px;
+}
+ .zhuye-left .lebiao-left p span{
+
+     color: #707070;
+     font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
+     font-size: 14px;
+
+ }
+
+
+.dibu-liebiao{
+   margin-top: -5px;
+}
+.dibu-liebiao span{
+ font-size: 5px;
+    padding-left: 7px;
+}
+.zhuye-left .tuijian-box .dibu-liebiao div{
+      float: left;
+
+}
+.jiaguanzhu-btn{
+    text-align: center;
+
+
+    top: 90px;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(255,209,0);
+    color: #444;
+    border: 1px solid #ffd100;
+    border-radius: 4px;
+    cursor: pointer;
+    left:120px;
+    position: absolute;
+    top:0px;
+}
+.jiaguanzhu-btn:hover{
+    background-color: rgb(255, 128, 149);
+}
+.huanyipi{
+    text-align: center;
+    height: 30px;
+    background-color: rgb(255,209,0);
+    color: #444;
+    border: 1px solid #ffd100;
+    border-radius: 4px;
+    cursor: pointer;
+    left:200px;
+    position: absolute;
+    top:0px;
+    width: 70px;
+}
+.huanyipi:hover{
+    background-color: rgb(255, 148, 246);
+}
+.kuang-nerong{
+    background-color: rgb(245,246,247);
+}
+.kuang-nerong  .liebiao-list{
+    padding-top: 10px;
+    height: 75px;
+background-color: white;
+    margin-top: 5px;
+}
+.lebiao-left-a{
+     font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
+      color: #707070;
+    font-weight: bold;
+    text-decoration: none;
+    list-style: none;
+}
+.lebiao-left-a:hover{
+ color: #d22222;
+}
+
+.dibu-liebiao-span-11{
+    color: #707070;
+    font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
+}
+.right-list{
+    top:70px;
+    position: fixed;
+    height: 600px;
+    width: 120px;
+    background-color: white;
+    left: 1500px;
+    border-radius:5px;
+
+}
+
+.right-list ul li{
+
+    list-style: none;
+  line-height: 32px;
+    width: 120px;
+    text-align: center;
+
+    font-size: 15px;
+    font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
+
+}
+.right-list ul li:hover{
+    background-color: rgb(244,68,68);
+}
+.right-list ul li:hover a{
+    color:white;
+}
+.right-list ul li a{
+    color: #707070;
+    text-decoration: none;
+
+}
+.right-list-index1{
+    background-color: rgb(244,68,68);
+}
+.center-list{
+    background-color: rgb(245,246,247);
+    width: 1050px;
+
+   position: absolute;
+    left: 400px;
+    top:15px;
+    border-radius:5px;
+
+}
+.center-list-dingbu{
+
+    width:1050px;
+    height: 460px;
+    background-color: rgb(245,246,247);
+}
+.center-list-dingbu .img2{
+
+    width:1050px;
+    height: 100px;
+}
+.center-list-dibu div{
+    float:left;
+}
+
+#test10 div img{
+    height: 300px;
+    width: 525px;
+    border-radius: 5px;
+}
+.center-list-di-1{
+
+    width: 525px;
+    height: 300px;
+    border-radius: 8px;
+
+}
+
+.center-list-dibu .carousel-item img{
+    height: 300px;
+    width: 525px;
+}
+
+.center-list-di-2{
+
+    width: 525px;
+    height: 300px;
+}
+.center-list-di-2 .container{
+  ;
+    padding: 0px;
+}.center-list-di-2 .jumbotron{
+    width: 525px;
+    height: 300px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: "/ ";
+    padding: 0 5px;
+
+}
+.breadcrumb li{
+    float: left;
+}
+.breadcrumb {
+    padding: 9px;margin: 2px;
+}
+.list-fixd li{
+    list-style: none;
+}
+.list-fixd-li div{
+    float: left;
+}
+.list-fixd-li{
+    height: 110px;
+
+    position: relative;
+
+
+    border-radius:5px;
+margin-top: 10px;
+    background-color: white;
+}
+.list-fixd-li:hover{
+    background-color: rgb(250,250,250);
+}
+.list-fixd-li .title1 a{
+    text-decoration: none;
+    list-style: none;
+    font-size: 25px;
+    margin-left: 20px;
+    color: #4f4f4f;
+    line-height: 44px;
+    font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
+}
+.touxiang-11{
+    width: 25px;
+    height: 25px;
+    border-radius:50%
+}
+.fenlei-a{
+
+    color:rgb(52,158,233);
+    font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
+}
+
+.touxiang-11-name{
+  margin-left:-30px;
+    margin-top: 2px;
+    color: rgb(25,125,105);
+}
+.touxiang-11-data{
+    color: rgb(155,155,155);
+}
+.list-fixe-li-di a{
+    float: left;
+    padding: 23px;
+    text-decoration: none;
+}.list-fixe-li-di a:hover{
+     color: rgb(202,12,22);
+}
+.list-fixd-li-right{
+    margin-left: 300px;
+    margin-top: 10px;
+}
+.list-fixd-li-right .p-1{
+    font-size: 18px;
+    color: #6ab3df;
+}
+
+.list-fixd-li-right .p-2{
+    font-size: 13px;
+    color: #9e9e9e;
+    margin-top: 10px;
+
+}
+
+.pager1 {
+    margin-left: 190px;
+}
+.pager1 li
+{
+    float: left;
+}

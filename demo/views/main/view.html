@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="listBox">
+    <h1>{{content.title}}</h1>
+    <p class="colDefault">
+      作者: <span class="colInfo">{{content.user.username}}</span>
+      时间: <span class="colInfo">{{content.addTime | date('Y年m月d日 H:i:s', -8*60)}}</span>
+      阅读: <span class="colInfo">{{content.views}}</span>
+      评论: <span class="colInfo">{{content.comments.length}}</span>
+    </p>
+    <dfn>{{content.content}}</dfn>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="messageList">
+    <div class="messageBox">
+      <section class="messageBox-title">
+        <span><stgrong>评论</stgrong></span>
+        <em>一共有<span id="messageCount">0</span>条评论</em>
+      </section>
+      <div class="messageBox-input">
+        {% if userInfo._id %}
+        <i>zmouse</i>
+        <div class="input-group mb10">
+          <textarea type="text" class="form-control" placeholder="content" id="messageContent"></textarea>
+          <input type="hidden" id="contentId" value="{{content.id}}">
+          <span class="input-group-btn">
+            <button class="btn btn-normal" id="messageBtn">提交</button>
+          </span>
+        </div><!-- /input-group -->
+        {% else %}
+        <button type="button" class="btn btn-block btn-normal">你还没有登录，请先登录</button>
+        {% endif %}
+      </div>
+    </div>
+    <div class="message-list">
+      <ul>
+        
+      </ul>
+    </div>
+
+    <ul class="page_index">
+      <li class="previous">
+      </li>
+      <li><strong>1 / 3</strong></li>
+      <li class="next">
+      </li>
+    </ul>
+
+  </div>
+
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/comment.js"></script>
+
+
+
+
+
+{% endblock %}

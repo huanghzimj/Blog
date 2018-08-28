@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../../public/layui/css/layui.css">
+  <link rel="stylesheet" href="../../public/css/wenzhangye.css">
+  <script src="../../public/js/layout.js"></script>
+  <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+  <link rel="stylesheet" href="../../public/layui/css/layui.css">
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+</head>
+<body>
+
+<style>
+  .head{
+    position: absolute;
+    left: 1600px;
+    top:50px;
+  }
+</style>
+<div class="center">
+  <div class="head">
+
+
+<ul class="layui-nav layui-nav-tree" lay-filter="demo">
+
+
+  <li class="layui-nav-item">
+    <a href="/">首页<span class=""></span></a>
+  </li>
+  <li class="layui-nav-item">
+    <a href="/Shujuku">数据库<span class=""></span></a>
+  </li>  <li class="layui-nav-item">
+  <a href="/Chengxurensheng">程序人生<span class=""></span></a>
+</li>
+  <li class="layui-nav-item">
+    <a href="/Php">PHP<span class=""></span></a>
+  </li> <li class="layui-nav-item">
+  <a href="/Javaweb">Javaweb<span class=""></span></a>
+</li>
+  <li class="layui-nav-item">
+    <a href="/C">C/C++<span class=""></span></a>
+  </li><li class="layui-nav-item">
+  <a href="/Node">node.js<span class=""></span></a>
+</li>
+  <li class="layui-nav-item">
+    <a href="/Yidong">移动开发<span class=""></span></a>
+  </li>   <li class="layui-nav-item">
+  <a href="/Houtai">后台开发<span class=""></span></a>
+</li>
+  <li class="layui-nav-item">
+    <a href="/Jichu">计算机基础<span class=""></span></a>
+  </li><li class="layui-nav-item">
+  <a href="/">软件安装</a>
+</li>
+  <li class="layui-nav-item">
+    <a href="/Qukuai">区块链</span></a>
+  </li>
+  {% if userInfo._id %}
+  {% else %}
+  <li class="layui-nav-item dengluli">
+    <a data-toggle="modal" data-target="#login" href="">登录<span class="layui-badge-dot"></span></a>
+  </li>
+  {% endif %}
+  <li class="layui-nav-item">
+    <a data-toggle="modal" data-target="#register" href="">注册<span class="layui-badge-dot"></span></a>
+  </li>
+  <li class="layui-nav-item" id="xiaoxion">
+  <a data-toggle="modal" data-target="#xiaoxi" href="">消息<span class="" ></span></a>
+</li>
+  {% if userInfo._id %}
+  <li class="layui-nav-item">
+    <a href="/xiewenzhang">写文章</span></a>
+  </li>
+  <li class="layui-nav-item" lay-unselect="">
+    <a href="javascript:;"><img src="{{avatarUrl}}" class="layui-nav-img">{{name}}</a>
+    <dl class="layui-nav-child">
+      <dd><a href="/edituser?userid={{userInfo._id}}">修改信息</a></dd>
+      <dd><a href="/admin">后台管理</a></dd>
+
+      <dd><a href="javascript:;" id="logoutBtn">退出登录</a></dd>
+    </dl>
+  </li>
+  {% endif %}
+</ul>
+
+
+
+
+
+</div>
+
+  <style>
+
+#closechat{
+  margin-left: 200px;
+  margin-top: 5px;
+}
+    .wrapper {
+      width: 500px;
+      height: 660px;
+      padding: 5px;
+      margin: 0 auto;
+      background-color: #f4c4ed;
+      position: absolute;
+      margin-top: 100px;
+      z-index: 99999;
+      display: none;
+    left: 50px;
+      box-shadow: 0 0 15px #555;
+
+    }
+    #loginWrapper {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(5, 5, 5, .6);
+      text-align: center;
+      color: #fff;
+      display: block;
+      padding-top: 200px;
+    }
+    #nickWrapper {
+      display: none;
+    }
+    .banner {
+      height: 80px;
+      width: 100%;
+    }
+    .banner p {
+      float: left;
+      display: inline-block;
+    }
+    .controls {
+      height: 100px;
+      margin: 5px 0px;
+      position: relative;
+    }
+    #historyMsg {
+      height: 400px;
+      background-image:url('../../public/imgs/winchat.png');
+      overflow: auto;
+      padding: 2px;
+    }
+    #historyMsg img {
+      max-width: 99%;
+    }
+    .timespan {
+      color: #ddd;
+    }
+    .items {
+      height: 30px;
+    }
+    #colorStyle {
+      width: 50px;
+      border: none;
+      padding: 0;
+    }
+    /*custom the file input*/
+
+    .imageLable {
+      position: relative;
+    }
+    #sendImage {
+      position: absolute;
+      width: 52px;
+      left: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    /*end custom file input*/
+
+    #messageInput {
+      width: 440px;
+      max-width: 440px;
+      height: 90px;
+      max-height: 90px;
+      float:left;
+    }
+    #sendBtn {
+      width: 50px;
+      height: 96px;
+      float: right;
+    }
+    #emojiWrapper {
+      display: none;
+      width: 480px;
+      bottom: 105px;
+      position: absolute;
+      background-color: #4ce8bb;
+      box-shadow: 0 0 5px #555;
+    }
+    #emojiWrapper img {
+      margin: 2px;
+      padding: 2px;
+      width: 25px;
+      height: 25px;
+    }
+    #emojiWrapper img:hover {
+      background-color: blue;
+    }
+    .emoji{
+      display: inline;
+    }
+    footer {
+      text-align: center;
+    }
+    #closechat{
+      position: absolute;
+      right: 1px;
+      top: -2px;
+    }
+
+.modal-content{
+  width: 528px;
+}
+    .liaotiantouxiang{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .time-liaotian{
+      font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+      font-size: 10px;
+      color: rgba(64, 144, 255, 0.97);
+    }
+    .liaotianname{
+      font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+      font-size: 12px;
+      color: rgba(23, 27, 29, 0.98);
+    }
+    .content-liaotian{
+      font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+      font-size: 14px;
+      color: rgba(6, 5, 2, 0.6);
+    }
+  </style>
+
+  <!--xiaoxi-->
+  <div class="xiaoximengban">
+
+    <input type="text" id="name-io" value="{{name}}" style="display:none">
+    <input type="text" id="avatarUrl-io" value="{{avatarUrl}}" style="display:none">
+
+            <div class="wrapper "id="wrapper-1">
+              <div class="banner">
+                <h3>来消息了</h3>
+                <button type="button" id="closechat" class="btn btn btn-danger">关闭</button>
+                <span id="status"></span>
+              </div>
+              <div id="historyMsg">
+              </div>
+              <div class="controls" >
+                <div class="items">
+
+                  <input id="emoji" type="button" value="表情" title="表情" />
+                  <label for="sendImage" class="imageLable">
+                    <input type="button" value="图像"  />
+                    <input id="sendImage" type="file" value="image"/>
+                  </label>
+                </div>
+                <textarea id="messageInput" placeHolder="请输入发送的消息"></textarea>
+                <input id="sendBtn" type="button" value="发送">
+                <div id="emojiWrapper">
+                  <button type="button" id='closeemojiwrapper' class="btn btn-warning">关闭</button>
+                </div>
+              </div>
+
+            </div>
+  </div>
+
+  <script type="text/javascript">
+
+     function showEmoji(msg) {
+          var match;
+          var result = msg;
+           var   reg = /\[emoji:\d+\]/g;
+            var  emojiIndex;
+           var   totalEmojiNum = document.getElementById('emojiWrapper').children.length;
+          while (match = reg.exec(msg)) {
+              emojiIndex = match[0].slice(7, -1);
+              if (emojiIndex > totalEmojiNum) {
+                  result = result.replace(match[0], '[X]');
+              } else {
+                  result = result.replace(match[0], '<img class="emoji" src="../../public/emoji/' + emojiIndex + '.gif" />');
+              };
+          };
+          return result;
+      }
+
+
+  //点击表情包添加到输入框
+      document.getElementById('emojiWrapper').addEventListener('click', function(e) {
+          var target = e.target;
+          if (target.nodeName.toLowerCase() == 'img') {
+              var messageInput = document.getElementById('messageInput');
+              messageInput.focus();
+              messageInput.value = messageInput.value + '[emoji:' + target.title + ']';
+
+          };
+      });
+//点击表情
+          $("#emoji").click(function(){
+
+              var emojiContainer = document.getElementById('emojiWrapper'),
+                  docFragment = document.createDocumentFragment();
+              for (var i = 69; i > 0; i--) {
+                  var emojiItem = document.createElement('img');
+                  emojiItem.src = '../../public/emoji/' + i + '.gif';
+                  emojiItem.title = i;
+                  docFragment.appendChild(emojiItem);
+              };
+              emojiContainer.appendChild(docFragment);
+              $("#emojiWrapper").show();
+          });
+      var socket=io.connect('http://www.xzpapa.cn:3000'),//与服务器进行连接
+          send=document.getElementById('sendBtn');
+      send.onclick=function(){
+   if($('#messageInput').val()||''){
+
+       var msg = {
+           username:$("#name-io").val(),
+           avatarUrl:$("#avatarUrl-io").val(),
+           time :new Date().toTimeString().substr(0, 8),
+           contents: $("#messageInput").val()
+
+       };
+       socket.emit('tuijian', msg);
+
+       $('#messageInput').val('');
+       var container = document.getElementById('historyMsg'),
+           msgToDisplay = document.createElement('p');
+       msgToDisplay.innerHTML =  '<img src="'+msg.avatarUrl+'"'+'class="liaotiantouxiang"'+ '</span>'+'<span class="time-liaotian">'+ '&nbsp;&nbsp;'+msg.time+'</span>'+'&nbsp;&nbsp;'+'<span class="liaotianname">'+msg.username+'<span class="content-liaotian">'+':'+'&nbsp;&nbsp;'+ showEmoji(msg.contents)+'</span>'+'</br></br>';
+       container.appendChild(msgToDisplay);
+       container.scrollTop = container.scrollHeight;
+
+   } else{
+       alert("你的发送的消息为空，请填写后再次发送")
+   }
+
+   }
+
+
+      //接收来自服务端的信息事件
+      socket.on('tuijian',function(msg){
+
+
+              $(".wrapper").show();
+
+
+          var container = document.getElementById('historyMsg'),
+              msgToDisplay = document.createElement('p');
+          msgToDisplay.innerHTML =  '<img src="'+msg.avatarUrl+'"'+'class="liaotiantouxiang"'+ '</span>'+'<span class="time-liaotian">'+ '&nbsp;&nbsp;'+msg.time+'</span>'+'&nbsp;&nbsp;'+'<span class="liaotianname">'+msg.username+'<span class="content-liaotian">'+':'+'&nbsp;&nbsp;'+ showEmoji(msg.contents)+'</span>'+'</br></br>';
+          container.appendChild(msgToDisplay);
+          container.scrollTop = container.scrollHeight;
+
+
+      });
+
+
+  </script>
+
+
+<!-- 模态框 -->
+<!-- 注册窗口 -->
+<div id="register" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-title">
+        <h1 class="text-center">注册</h1>
+      </div>
+      <div class="modal-body">
+        <form class="form-group register" action="" >
+          <div class="form-group">
+            <label for="">账号</label>
+            <input class="form-control" type="text" placeholder="6-15位字母或数字" name="username">
+          </div>
+          <div class="form-group">
+            <label for="">用户名</label>
+            <input class="form-control" type="text" placeholder="至少6位字母或数字" name="name">
+          </div>
+          <div class="form-group">
+            <label for="">密码</label>
+            <input class="form-control" type="password" placeholder="至少6位字母或数字" name="password">
+          </div>
+          <div class="form-group">
+            <label for="">再次输入密码</label>
+            <input class="form-control" type="password" placeholder="至少6位字母或数字" name="repassword">
+          </div>
+
+          <div class="text-right">
+            <button class="btn btn-primary btn-zhuce" type="submit">提交</button>
+            <button class="btn btn-danger" data-dismiss="modal">取消</button>
+          </div>
+          <a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 登录窗口 -->
+<div id="login" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-title">
+        <h1 class="text-center">登录</h1>
+      </div>
+      <div class="modal-body">
+        <form class="form-group" action="">
+          <div class="form-group">
+            <label for="">登录账号</label>
+            <input class="form-control" type="text" placeholder="请登录账号" name="username">
+          </div>
+          <div class="form-group">
+            <label for="">密码</label>
+            <input class="form-control" type="password" placeholder="请输入密码" name="password">
+          </div>
+          <div class="text-right">
+            <button class="btn btn-primary btn-denglu" type="submit">登录</button>
+            <button class="btn btn-danger" data-dismiss="modal">取消</button>
+          </div>
+          <a href="" data-toggle="modal" data-dismiss="modal" data-target="#register">还没有账号？点我注册</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+
+<script src="../../public/layui/layui.js"></script>
+<script>
+//聊天窗口移动
+        var oWin = document.getElementById("wrapper-1");
+        var bDrag = false;
+        var disX = disY = 0;
+        oWin.onmousedown = function (event){
+            bDrag = true;
+            disX = event.clientX - oWin.offsetLeft;
+            disY = event.clientY - oWin.offsetTop;
+
+        };
+        document.onmousemove = function (event){
+            if (!bDrag)
+                return;
+            var iL = event.clientX - disX;
+            var iT = event.clientY - disY;
+            oWin.style.marginTop = oWin.style.marginLeft = 0;
+            oWin.style.left = iL + "px";
+            oWin.style.top = iT + "px";
+            return false
+        };
+        document.onmouseup = function (){
+            bDrag = false;
+        };
+
+</script>
+<script>
+
+
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+
+    $("#xiaoxion").click(function(){
+
+        $(".wrapper").show();
+
+    });
+
+
+    $("#closechat").click(function(){
+
+        $(".wrapper").hide();
+
+    });  $("#closeemojiwrapper").click(function(){
+
+        $("#emojiWrapper").hide();
+
+    });
+</script>
+<script>
+
+
+</script>
+
+{% block main %}{% endblock %}
+</html>

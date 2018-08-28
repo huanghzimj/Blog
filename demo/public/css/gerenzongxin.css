@@ -1,0 +1,228 @@
+
+.beijing-img{
+    height: 200px;
+    width: 1200px;
+    border-radius: 10px;
+}
+body{
+    background-color: rgb(243,243,243);
+    position: absolute;
+
+    width: 100%;
+}
+.center1{
+    top:20px;
+left: 15%;
+    position: relative;
+}
+.geren-top{
+
+
+    background-color: rgb(150,161,169);
+    height: 200px;
+    width: 1200px;
+    position: absolute;
+
+}  .geren-top2{
+       background-color: white;
+       height: 150px;
+       width: 1200px;
+       position: absolute;
+       top:200px;
+       border-radius: 8px;
+   }
+
+.touxiang-top img{
+    width: 190px;
+    height: 180px;
+    border-radius:10px;
+    position: absolute;
+    top:-50px;
+    left: 40px;
+    border-radius: 8px;
+
+}
+.name-top{
+    position: absolute;
+    left: 260px;
+    top: 20px;
+}
+.ziliao{
+    position: absolute;
+    left: 260px;
+    top: 70px;
+}
+.bianjigeren button{
+    text-align: center;
+    position: absolute;
+    left: 1040px;
+    top: 90px;
+    width: 120px;
+    height: 30px;
+    background-color: rgb(255,209,0);
+
+    color: #444;
+
+    border: 1px solid #ffd100;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+}
+.bianjigeren button a{
+    text-decoration: none;
+    color: black;
+    font-family: 微软雅黑;
+}
+.bianjigeren :hover{
+    background-color:greenyellow;
+}
+.top-center{
+    background-color:white;
+    position: absolute;
+    top: 370px;
+    width: 800px;
+    height: 50px;
+    border-radius: 8px;
+
+}
+
+.top-center a{
+
+    top: 10px;
+    text-decoration:none;
+    font-size: 20px;
+    color: #1a1a1a;
+
+}
+.top-center a:hover{
+
+    color: #9aa4af;
+
+}
+.top-center .a1{
+    position: absolute;
+    left: 40px;
+    font-size: 20px;
+    color: #1a1a1a;
+    text-decoration:none;
+}
+.top-center .a2{
+    position: absolute;
+    left: 120px;
+
+}
+.top-center .a3{
+    position: absolute;
+    left: 200px;
+}
+.top-center .a4{
+    position: absolute;
+    left: 280px;
+}.top-center .a5{
+     position: absolute;
+     left: 360px;
+ }
+.top-center .a6{
+    position: absolute;
+    left: 440px;
+}          .top-center .a7{
+               position: absolute;
+               left: 520px;
+           }
+
+
+/*showclass*/
+
+.showclass{
+    width: 800px;
+    position: absolute;
+    top:426px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+.dongtai{
+
+    height: 1200px;
+
+}
+.huida{
+    height: 1200px;
+    display: none;
+}
+.tiwen{
+
+    height: 1200px;
+    display: none;
+
+}
+.wenzhang{
+    height: 1200px;
+    display: none;
+}
+.zhuanlan{
+    height: 1200px;
+    display: none;
+}
+.xiangfa{
+    height: 1200px;
+    display: none;
+}
+.gengduo{
+    height: 1200px;
+    display: none;
+}
+.conter-right{
+    height: 120px;
+    width: 350px;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 860px;
+    top: 370px;
+    border-radius: 8px;
+}
+.conter-right a{
+    font-size: 25px;
+    text-decoration: none;
+    color:darkgrey;
+}
+.conter-right a:hover{
+
+    color:black;
+}
+.conter-right p{
+    font-size: 25px;
+
+}
+.conter-right .p1{
+    position: absolute;
+    left: 36px;
+    top:14px
+
+}
+.conter-right .p2{
+    position: absolute;
+    left: 35px;
+    top:14px
+
+}
+.conter-right .right-2{
+    position: absolute;
+    left: 230px;
+    top: 40px;
+}
+.conter-right .right-1{
+    position: absolute;
+    left: 30px;
+    top: 40px;
+}
+.conter-foot{
+    position: absolute;
+    top:150px;width: 350px;
+}
+.conter-foot p{
+    position: absolute;
+    left: 320px;
+}
+
+

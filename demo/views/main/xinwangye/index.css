@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#nav-top{
+    background-color: #d22222;
+    margin: 0 auto;
+   width: 100%;
+    height: 35px;
+    font-size: 14px;
+    position: fixed;
+}
+.img-home{
+
+
+    width: 17px;
+    height: 18px;
+    background: url("imgs/home.png") no-repeat;
+    position: absolute;
+    top: 11px;
+    right: 104px;
+
+}
+#nav-top-ul>li{
+
+    list-style: none;
+    float: left;
+    color: white;
+    text-align: center;
+}
+#nav-top-ul>li a{
+     font-family:   Microsoft Yahei,PingFang SC,HanHei SC,Arial;
+     position: absolute;
+     color: white;
+     text-decoration: none;
+}
+#nav-top-ul .li-1{
+    position: absolute;
+    left:150px;
+    height: 35px;
+    width: 65px;
+    top: 5px;
+
+}
+#nav-top-ul .li-2{
+     position: absolute;
+     left:350px;
+     height: 35px;
+     width: 65px;
+     top: 5px;
+
+ }
+#nav-top-ul .li-3{
+    position: absolute;
+    left:450px;
+    height: 35px;
+    width: 65px;
+    top: 5px;
+
+}
+#nav-top-ul .li-4{
+    position: absolute;
+    left:550px;
+    height: 35px;
+    width: 65px;
+    top: 5px;
+
+}
+#nav-top-ul .li-5{
+    position: absolute;
+    left:650px;
+    height: 35px;
+    width: 65px;
+    top: 5px;
+
+}
+
+#nav-top-ul .li-6{
+    position: absolute;
+    left:750px;
+    height: 35px;
+    width: 65px;
+    top: 5px;
+
+}
+#nav-top-ul .li-7{
+    position: absolute;
+    left:850px;
+    height: 35px;
+    width: 65px;
+    top: 5px;
+
+}

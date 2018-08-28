@@ -1,0 +1,75 @@
+
+.center{
+    margin: 0 auto;
+
+
+    width: 1000px;
+}
+.center .top h1{
+    font-family: 微软雅黑;
+}
+.center .data-time ,span{
+    font-family: 微软雅黑;
+}
+.xiazailianjie span{
+    font-family: 微软雅黑;
+}
+a{
+    text-decoration: none;
+    font-family: 微软雅黑;
+}
+{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    background-color: #1bc5a3;
+}
+.xiazailianjie{
+    background-color: #9acfea;
+    border: dashed 1px;
+    width: 1000px;
+
+    margin-top: 10px;
+}
+.xiazailianjie span{
+    padding: 10px;
+}
+.span-red{
+    color: indianred;
+}
+.span-red a{
+    color: indianred;
+}
+.buzhou{
+
+    width: 1000px;
+
+
+}
+.buzhou-img{
+    width: 800px;
+    padding: 20px;
+}
+.zanshangimg{
+    background-color: whitesmoke;
+    position:relative;
+    border: dashed 1px;
+
+}
+.zanshangimg .touxiang{
+    position: relative;
+
+    width: 100px;
+}
+.zanshangimg #weixin{
+    position: relative;
+    left: 50px;
+}
+.right-1{
+    position: relative;
+    left: 600px;
+}
+.buzhou-font{
+    font-family: 微软雅黑;
+}

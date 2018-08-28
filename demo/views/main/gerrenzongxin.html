@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% block main %}
+    <title>{{user.name}}的个人主页</title>
+
+    <link rel="stylesheet" href="../../public/css/gerenzongxin.css">
+    <link rel="stylesheet" href="../../public/js/gerenzongxin.js">
+<body>
+
+<div class="center1">
+<div class="geren-top">
+    <img class="beijing-img" src="{{user.beijing}}" alt="">
+
+
+</div>
+<div class="geren-top2">
+
+
+    <div class="touxiang-top"><img id="{{user.avatarUrl}}"src=  {% if user.avatarUrl %}
+      {{user.avatarUrl}}
+    {% else %} ../../public/imgs/touxiang.png {% endif %}  alt=""> </div>
+    <div class="name-top"><a href="" style=" text-decoration:none;"><H2 style="color: #1a1a1a" >{{user.name}}</H2></a></div>
+    <div class="ziliao"><a href="" style='color: #9aa4af ;text-decoration:none;'>{{user.gexing}}</a></div>
+    <div class="bianjigeren">
+        <button><a href="/edituser?userid={{userInfo._id}}">编辑个人资料</a></button> </div>
+
+
+</div>
+<script>
+
+</script>
+<div class="top-center">
+    <a class="a1" href="">动态</a>
+    <a class="a2" href="">回答</a>
+    <a  class="a3" href="">提问</a>
+    <a  class="a4" href="">文章</a>
+    <a class="a5" href="">专栏</a>
+    <a class="a6" href="">想法</a>
+    <a class="a7" href="">更多</a>
+
+
+</div>
+
+<div class="dongtai showclass"> 我的动态</div>
+<div class="huida showclass">我的回答</div>
+<div class="tiwen showclass">我的提问</div>
+<div class="wenzhang showclass">我的文章</div>
+<div class="zhuanlan showclass">我的专栏</div>
+<div class="xiangfa showclass">我的想法</div>
+<div class="gengduo showclass">更多</div>
+
+
+<div class="conter-right">
+    <div class="right-1"><a href="">关注了</a></div>
+    <div class="right-2"><a href="">关注者</a></div>
+    <div class="conter-foot">
+        <div class="conter-huati">
+            <hr><a href="">关注话题 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a><hr></div>
+           <div class="conter-zhuanlan">
+            <hr><a href="">关注的专栏&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a>
+
+            <hr></div>
+        <div class="conter-wenti"><hr><a href="">关注的问题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>0</span></a> <hr></div>
+        <div class="conter-shouchangjia"><hr><a href="">关注的收常夹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>0</span></a> <hr></div>
+    </div>
+
+</div>
+</div>
+</body>
+</html>
+
+

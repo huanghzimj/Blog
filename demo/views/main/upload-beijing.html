@@ -1,0 +1,20 @@
+
+    <title>文件上传</title>
+</head>
+<body>
+<!--enctype定义提交的数据类型-->
+<!--multipart/form-data 提交的数据格式 提交的数据是二进制-->
+<form action="/upload/beijing" method="post" enctype="multipart/form-data">
+    <input type="file" value="请选择上传文件" name="file">
+    <input type="hidden" id="contentId" value="{{userInfo._id}}">
+    <input type="submit" id="Btnsumbit" value="提交文件"/>
+</form>
+<H1> 上传背景分辨率 建议为     height: 200px;
+    width: 1200px; </H1>
+<script>
+
+</script>
+
+
+</body>
+</html>

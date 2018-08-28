@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block main%}
+<ol class="breadcrumb">
+    <li><a href="#">管理首页</a></li>
+    <li><span>用户编辑</span></li>
+</ol>
+
+<h3>用户编辑 - {{user.name}}</h3>
+<style>
+    .form-1{
+        width: 900px;
+
+    }
+</style>
+<form method="post" class="form-1">
+    <div class="form-group">
+        <label for="username">账号</label>
+        <input type="text" value="{{user.username}}" class="form-control" id="username" placeholder="{{user.username}}" name="username">
+    </div>    <div class="form-group">
+        <label for="name">用户名</label>
+        <input type="text" value="{{user.name}}" class="form-control" id="name" placeholder="{{user.name}}" name="name">
+    </div>    <div class="form-group">
+        <label for="password">密码</label>
+        <input type="text" value="{{user.password}}" class="form-control" id="password" placeholder="{{user.password}}" name="password">
+    </div>
+
+    <div class="form-group">
+        <label for="sex">性别</label>
+        <select name="sex" id="sex" class="form-control">
+
+
+
+            <option value="{{user.sex}}" selected>{{user.sex}}</option>
+
+            <option value="女">女</option>
+            <option value="女">男</option>
+
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="telephone">手机号</label>
+        <input type="text" value="{{user.telephone}}" class="form-control" id="telephone" placeholder="{{user.telephone}}" name="telephone">
+    </div>    <div class="form-group">
+        <label for="xuexing">血型</label>
+        <input type="text" value="{{user.xuexing}}" class="form-control" id="xuexing" placeholder="{{user.xuexing}}" name="xuexing">
+    </div>    <div class="form-group">
+        <label for="intro">简介</label>
+        <input type="text" value="{{user.intro}}" class="form-control" id="intro" placeholder="{{user.intro}}" name="intro">
+    </div>
+    <div class="form-group">
+        <label for="address">地址</label>
+        <input type="text" value="{{user.address}}" class="form-control" id="address" placeholder="{{user.address}}" name="address">
+    </div><div class="form-group">
+        <label for="email">邮箱</label>
+        <input type="text" value="{{user.email}}" class="form-control" id="email" placeholder="{{user.email}}" name="emali">
+    </div><div class="form-group">
+        <label for="qq">qq</label>
+        <input type="text" value="{{user.qq}}" class="form-control" id="qq" placeholder="{{user.qq}}" name="qq">
+    </div><div class="form-group">
+        <label for="fanwen">访问量</label>
+        <input type="text" value="{{user.fanwen}}" class="form-control" id="fanwen" placeholder="{{user.fanwen}}" name="fanwen">
+    </div><div class="form-group">
+        <label for="yuanchuang">原创量</label>
+        <input type="text" value="{{user.yuanchuang}}" class="form-control" id="yuanchuang" placeholder="{{user.yuanchuang}}" name="yuanchuang">
+    </div><div class="form-group">
+        <label for="fensi">粉丝数</label>
+        <input type="text" value="{{user.fensi}}" class="form-control" id="fensi" placeholder="{{user.fensi}}" name="fensi">
+    </div><div class="form-group">
+        <label for="xihuan">喜欢</label>
+        <input type="text" value="{{user.xihuan}}" class="form-control" id="xihuan" placeholder="{{user.xihuan}}" name="xihuan">
+    </div>
+    <div class="form-group">
+        <label for="huida">回答数</label>
+        <input type="text" value="{{user.huida}}" class="form-control" id="huida" placeholder="{{user.huida}}" name="huida">
+    </div>
+<div class="form-group">
+        <label for="paiming">排行</label>
+        <input type="text" value="{{user.paiming}}" class="form-control" id="paiming" placeholder="{{user.paiming}}" name="paiming">
+    </div>
+<div class="form-group">
+        <label for="jifen">积分</label>
+        <input type="text" value="{{user.jifen}}" class="form-control" id="jifen" placeholder="{{user.jifen}}" name="jifen">
+    </div>
+
+
+    <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+{% endblock%}

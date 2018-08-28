@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+
+{% block mainlist %}
+
+<!--列表-->
+<ul class="list-fixd">
+
+    {% for wenzhang in contents %}
+
+    <li class="list-fixd-li">
+        <div class="list-fixd-li-left">   <div class="title1"><a href="/view?contentid={{wenzhang.id}}&fenlei={{wenzhang.category.rout}}">{{wenzhang.title}}</a>
+        </div>
+            <br>
+            <div class="list-fixe-li-di"><a href="" class="fenlei-a">{{wenzhang.category.categoriesID}}</a>
+                <a href="/bierenchakanzhuye?userid={{wenzhang.userId.id}}"> <div><img class="touxiang-11" src="{{wenzhang.userId.avatarUrl}}" alt=""> <a href="" class="touxiang-11-name">{{wenzhang.userId.name}}</a></div> </a>
+                <a href="" class="touxiang-11-data">{{wenzhang.addTime | date('Y年m月d日 H:i:s', -8*60)}}</a>
+
+            </div>
+        </div>
+        <div class="list-fixd-li-right">
+            <p class="p-1">{{wenzhang.yuedu}}</p>
+            <p class="p-2">阅读量</p>
+        </div> <!--阅读 end-->
+    </li>
+</ul>
+{% endfor %}
+<style>
+.ul-11 li{
+
+    float:left;
+    padding-left: 80px;
+    padding-top:30px
+}
+    .ul-11{
+left: 10px;
+        position: absolute;
+    }
+    .zhongjian-li{
+        color: #5db8d9;
+        line-height: 40px;
+        font-size: 18px;
+        font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+    }
+
+</style>
+<nav aria-label="...">
+    <!--<ul class="pager12">-->
+
+    <!--</ul>-->
+</nav>
+
+ <ul class="ul-11">
+     <li class="previous">{%if page<=1%}  <button type="button" class="btn btn-warning">没有上一页</button>
+         {%else%}   <a href="/{{wenzhang.category.rout}}?page={{page-1}}"> <button type="button" class="btn btn-primary ">上一页</button></a>
+         {%endif%}
+     </li>
+     <li class="zhongjian-li">一共有 <span style="color: #d22222">{{count}}</span> 条数据，每页显示 <span style="color:green">{{limit}} </span>条数据，一共 有 <span style="color:darkgoldenrod">{{pages}}</span> 页，当前为第 <span style="color:burlywood">{{page}}</span> 页</li>
+     <li class="next">{%if page<=pages-1%}<a href="/{{wenzhang.category.rout}}?page={{page+1}}"> <button type="button" class="btn btn-primary ">下一页</button>{%else%}  <button type="button" class="btn btn-warning">没有下一页</button></a>{%endif%}</li>
+ </ul>

@@ -1,0 +1,100 @@
+a{
+	text-decoration:none;
+	color:white;
+}
+h2{
+	font-family:"Voltaire";
+	text-transform:uppercase;
+	margin:0;
+}
+#scene{
+	background-color:#304056;
+	position:relative;
+	overflow:hidden;
+	width:100%;
+}
+.layer{
+	pointer-events: none;
+}
+.col {
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	width:12.5%;
+	pointer-events: all;
+	overflow:initial;
+	margin:0 0 30px;
+}
+.layer.main{
+	width:150%;
+	position:absolute;
+	z-index:1;
+	padding:20px;
+}
+.col a{
+	display:block;
+	margin:15px;
+	overflow:hidden;
+	box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.37);
+}
+.col a .hover {
+	position: absolute;
+	top: 15px;
+	right:15px;
+	bottom:-15px;
+	left: 15px;
+	z-index: 1;
+	color: white;
+	background: -webkit-linear-gradient(45deg, rgba(0,0,0,0.47) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(45deg, rgba(0,0,0,0.47) 0%,rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78000000', endColorstr='#00000000',GradientType=1 );
+}
+.col a .hover:after{
+	content:'';
+	position:absolut;
+	top:0;
+	left:0;
+	z-index:1;
+	width:100%;
+	height:100%;
+	display:block;
+	background: rgb(235, 116, 152);
+	opacity:0;
+	-webkit-transition:0.35s ease;
+	transition:0.35s ease;
+}
+.col a .hover:hover:after{
+	opacity:0.85;
+	-webkit-transition:0.35s ease;
+	transition:0.35s ease;
+}
+.align-bottom {
+	position: absolute;
+	width: 100%;
+	bottom: 0%;
+	z-index: 2;
+	padding: 15px 20px;
+}
+.bg-img{
+	padding:0px;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background-size:cover;
+	background-position:50% 50%;
+}
+
+@media only screen and (max-width:1200px){
+	.layer .col{
+		width:16.666%;
+	}
+	
+}
+@media only screen and (max-width:650px){
+	.layer .col{
+		width:25%;
+	}
+	
+}

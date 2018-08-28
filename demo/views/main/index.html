@@ -1,0 +1,252 @@
+
+{% extends 'layout.html' %}
+{% block main %}
+<script src="http://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js" type="text/javascript"></script>
+
+        <link rel="stylesheet" href="../../public/css/index.css">
+<title>首页</title>
+
+
+
+<!--左侧-->
+{% if userInfo._id %}
+<div class="zhuye-left" id="zhute-left1">
+    <div class="right_box user_info" id="user_info1">
+        <dl class="inf_bar clearfix">
+            <dt class="csdn-tracking-statistics tracking-click" data-mod="popu_381">
+                <a href='/chakanzhuye?userid={{userInfo._id}}' title="点击进入{{name}}主页" target="_blank">
+                    <img src=".{{avatarUrl}}" class="avatar_pic">
+                </a>
+                <span class="medals" title="">
+                  </span>
+            </dt>
+            <dd class="user_info-name">
+                <h3 class="name"><a href='/chakanzhuye?userid={{userInfo._id}}' title="点击进入{{name}}主页" target="_blank" >{{name}}</a></h3>
+                <span class=" tracking-click" ><a class=" btn-redborder-small "href="/chakanzhuye?userid={{userInfo._id}}" id="span_add_follow" title="关注{{name}}"><button class="jiaguanzhu-btn">个人中心</button></a></span>
+
+            </dd>
+        </dl>
+        <div class="inf_number_box clearfix">
+            <dl class="clearfix-dl1">
+                <dt>原创</dt>
+                <dd>{{yuanchuang}}</dd>
+            </dl>
+            <dl class="clearfix-dl2">
+                <dt>粉丝</dt>
+                <dd id="fan">{{fensi}}</dd>
+            </dl>
+            <dl class="clearfix-dl3">
+                <dt>喜欢</dt>
+                <dd>44{{xihuan}}</dd>
+            </dl>
+            <dl class="clearfix-dl4">
+                <dt>回答</dt>
+                <dd>{{huida}}</dd>
+            </dl>
+
+        </div>
+        <hr class="xian">
+
+        <span class="fanwenliang span-8">访问量:<span class="fanwenliang-1">{{fanwen}}</span></span>
+
+        <span class="paiming span-8">排名:<span class="paiming-1">{{paiming}}</span></span>
+
+        <span class="jifen span-8">积分: <span class="jifen-1">{{jifen}}</span></span>
+
+    </div>
+
+<div class="tuijian-box" id="tuijian-box">
+    <div class="kuang"><h5>今日推荐</h5>  <a class=" btn-redborder-small " id="span_add_follow" title=""><button class="huanyipi">换一批</button></a></div>
+    <div class="kuang-nerong">
+        <div class="liebiao-father">
+     <div class="lebiao-left">
+
+    <a href="#" class="lebiao-left-a">程序员找工作的个人经验教训以及注意事项
+    </a>
+    <p> <span>团长</span>
+        <span>2018年5月1日</span>
+        <span>阅读量</span></p>
+
+
+</div>
+    <div class="lebiao-right"><img src="../../public/imgs/默认头像.jpg" alt=""></div>
+
+        </div>
+        <div class="liebiao-father">
+     <div class="lebiao-left">
+
+    <a href="#" class="lebiao-left-a">程序员找工作的个人经验教训以及注意事项
+    </a>
+    <p> <span>团长</span>
+        <span>2018年5月1日</span>
+        <span>阅读量</span></p>
+
+
+</div>
+    <div class="lebiao-right"><img src="../../public/imgs/默认头像.jpg" alt=""></div>
+
+        </div>
+
+    </div>
+        </div>
+
+</div>
+{% endif %}
+<!--中间-->
+
+<script>
+
+
+</script>
+
+<script>
+
+</script>
+
+<div class="center-list">
+
+<div class="center-list-dingbu">
+    <ol class="breadcrumb">
+        <li><a href="http://localhost:8082/">首页</a></li>
+        <li><a href="http://localhost:8082/">最新文章</a></li>
+
+    </ol>
+<div><img class="img2" src="../../public/imgs/110.png" alt=""></div>
+<div class="center-list-dibu">
+
+    <div class="center-list-di-1">
+        ​
+        <div class="layui-carousel" id="test10">
+            <div carousel-item="">
+                <div><img src="../../public/imgs/120.png"></div>
+
+                <div><img src="../../public/imgs/p.png"></div>
+                <div><img src="../../public/imgs/888.png"></div>
+                <div><img src="../../public/imgs/8.png"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        layui.use(['carousel', 'form'], function(){
+            var carousel = layui.carousel
+                ,form = layui.form;
+
+            //常规轮播
+            carousel.render({
+                elem: '#test1'
+                ,arrow: 'always'
+            });
+
+            //改变下时间间隔、动画类型、高度
+            carousel.render({
+                elem: '#test2'
+                ,interval: 1800
+                ,anim: 'fade'
+                ,height: '120px'
+            });
+
+            //设定各种参数
+            var ins3 = carousel.render({
+                elem: '#test3'
+            });
+            //图片轮播
+            carousel.render({
+                elem: '#test10'
+                ,width: '525px'
+                ,height: '300px'
+                ,interval: 5000
+            });
+
+            //事件
+            carousel.on('change(test4)', function(res){
+                console.log(res)
+            });
+
+            var $ = layui.$, active = {
+                set: function(othis){
+                    var THIS = 'layui-bg-normal'
+                        ,key = othis.data('key')
+                        ,options = {};
+
+                    othis.css('background-color', '#5FB878').siblings().removeAttr('style');
+                    options[key] = othis.data('value');
+                    ins3.reload(options);
+                }
+            };
+
+            //监听开关
+            form.on('switch(autoplay)', function(){
+                ins3.reload({
+                    autoplay: this.checked
+                });
+            });
+
+            $('.demoSet').on('keyup', function(){
+                var value = this.value
+                    ,options = {};
+                if(!/^\d+$/.test(value)) return;
+
+                options[this.name] = value;
+                ins3.reload(options);
+            });
+
+            //其它示例
+            $('.demoTest .layui-btn').on('click', function(){
+                var othis = $(this), type = othis.data('type');
+                active[type] ? active[type].call(this, othis) : '';
+            });
+        });
+    </script>
+    <div class="center-list-di-2">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>欢迎登陆web交流平台！</h1>
+                <p>这是一个IT开发者学习交流平台。</p>
+                <p><a class="btn btn-primary btn-lg" role="button">
+                    学习更多</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+    <!--右侧-->
+
+    <!--<div class="right-list">-->
+        <!--<ul>-->
+            <!--<li class="right-list-index1"><a href="" >首页</a></li>-->
+
+
+
+
+            <!--<li><a href="/Shujuku">数据库</a></li>-->
+            <!--<li><a href="/Chengxurensheng">程序人生</a></li>-->
+            <!--<li><a href="/Php">PHP</a></li>-->
+            <!--<li><a href="/Javaweb">java Web</a></li>-->
+            <!--<li><a href="/C">C/C++</a></li>-->
+            <!--<li><a href="/Node">node.js</a></li>-->
+            <!--<li><a href="/Yidong">移动开发</a></li>-->
+            <!--<li><a href="/Houtai">后台开发</a></li>-->
+            <!--<li><a href="/Jichu">计算机基础</a></li>-->
+            <!--<li><a href="/">软件安装</a></li>-->
+            <!--<li><a href="/Qukuai">区块链</a></li>-->
+        <!--</ul>-->
+
+    <!--</div>-->
+
+    <!--列表-->
+
+    {% block mainlist %}{% endblock %}
+</div>
+
+
+
+
+
+

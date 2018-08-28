@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+{% block main %}
+    <title>{{user.name}}的资料修改</title>
+    <link rel="stylesheet" href="../../public/css/gerenedit.css">
+
+<body>
+<div class="biaodan">
+
+    <div class="biaodan-top"><img class="biaodan-top-img" src={{user.beijing}} alt=""></div>
+    <div class="biaodao-beijing"></div>
+    <div class="biaodan-tou">
+
+    <img class="biaodan-touxiang" src="{{user.avatarUrl}}" alt="">
+    </div>
+    <span class="ProfileHeader-name">筱至</span>
+    <a class="fanhuizhuye"href="/chakanzhuye?userid={{userInfo._id}}">返回我的主页&nbsp;></a>
+
+
+      <div class="nerong-box">
+
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">昵称:</span></div>
+
+
+           <div class="form-group2"> <input type="text" class="form-control" id="name" name="title" value="{{user.name}}" placeholder="请输入昵称" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">一句话介绍
+:</span></div>
+
+
+           <div class="form-group2"> <input type="text" class="form-control" id="intro" name="title" value="{{user.intro}}" placeholder="请输入简介" /></div>
+          </div>
+
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">手机号:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="telephone" name="title" value="{{user.telephone}}" placeholder="请输入手机号" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">邮箱:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="email" name="title" value="{{user.email}}" placeholder="请输入联系邮箱" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">性别:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="sex" name="title" value="{{user.sex}}" placeholder="男或女" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">个性签名:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="gexing" name="title" value="{{user.gexing}}" placeholder="请输入个性签名" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">QQ号:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="qq" name="title" value="{{user.qq}}" placeholder="请输入QQ号" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">地址:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="address" name="title" value="{{user.address}}" placeholder="请输入地址" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">微信号:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="xuexing" name="title" value="{{user.xuexing}}" placeholder="请输入血型" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">微信号:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="weixin" name="title" value="{{user.weixin}}" placeholder="请输入微信号" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">修改密码:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control" id="password" name="title" value="{{user.password}}" placeholder="请输入修改后密码" /></div>
+          </div>
+          <div class="form-group">
+              <div class="form-group1">  <span for="title">确认密码:</span></div>
+
+
+              <div class="form-group2"> <input type="text" class="form-control"  id="respassworld" name="title" value="" placeholder="请输重新输入修改后密码" /></div>
+          </div>
+
+
+
+      </div>
+
+
+    <button type="submit" class="btn btn-default tijiao">提交</button>
+    <button type="submit" class="btn btn-default xiugaitouxiang"><a href="/user/upload">修改头像</a></button>
+    <button type="submit" class="btn btn-default genggaibeijing"><a href="/user/upload/beijing">更改背景图</a></button>
+
+    <script src="../../public/js/gerenedit.js"></script>
+</div>
+</body>
+
+</html>

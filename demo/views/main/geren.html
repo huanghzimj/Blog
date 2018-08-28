@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<link rel="stylesheet" href="../../public/index/css/bootstrap.css">
+<script src="../../public/index/js/jquery.min.js"></script>
+<script src="../../public/index/js/bootstrap.js"></script>
+
+<style>
+    .bui-box{
+        height: 310px;
+        width: 660px;
+        overflow: hidden;
+        position: absolute;
+
+
+    }
+    .bui-left>li{
+        text-decoration: none;
+
+        list-style-type:none;
+    }
+    .bui-right >li{
+        text-decoration: none;
+
+        list-style-type:none;
+    }
+    .bui-right{
+         position: absolute;
+         z-index: 99;
+         top:90px;         left: 560px;
+        width: 60px;
+     }
+    .bui-right li{
+        background-color: black;
+        color: #FFFFFF;
+        font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+       font-size: 14px;
+    }
+   .bui-right>li{
+       text-align: center;
+       padding:15px 0;
+   } 
+    .bui-right .bui-right-1{
+        position: absolute;
+        height: 50px;
+        top:-80px; width: 60px;
+
+    }
+    .bui-right .bui-right-2{
+        position: absolute;
+        height: 50px;
+        top:-20px; width: 60px;
+
+    }
+    .bui-right .bui-right-3{
+        position: absolute;
+
+        top:40px; width: 60px;
+        height: 50px;
+
+    }
+    .bui-right .bui-right-4{
+        position: absolute;
+        height: 50px;
+        top:100px; width: 60px;
+
+    }
+    .bui-right .bui-right-5{
+        position: absolute;
+        height: 50px;
+        top:160px; width: 60px;
+
+    }
+    .bui-right .bui-right-6{
+        position: absolute;
+        height: 50px;
+        top:220px; width: 60px;
+
+    }
+    .tianchong-topli{
+        position: absolute;
+        height: 10px;
+        height: 310px; width: 60px;
+        background-color: black;
+        left: 600px;
+        top: 0px;
+    }
+    .slide-item .title{
+        top: 270px;
+        position: absolute;
+        color: white;
+        font-size: 17px;
+        font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+    .bui-box a>img{
+        height: 310px;
+        width: 660px;
+
+    }
+    .slide-item{
+        display: none;
+    }
+</style>
+<div class="bui-box slide"><ul class="slide-list bui-left">
+    <li ga_event="focus_list_click" class="slide-item">
+        <a href="/group/6505483405109494285/" target="_blank">
+            <img src="//p1.pstatp.com/origin/5405001f9c2a77bd0176" alt="">
+            <p class="title">2018年，这个世界会变得更好吗？</p></a></li>
+    <li ga_event="focus_list_click" class="slide-item slide-item-active">
+        <a href="/group/6505527939633775107/" target="_blank"><img src="//p1.pstatp.com/origin/5408001121683149ea15" alt="">
+            <p class="title">她花四年缝制成一幅兽皮画，有人开价30万为啥不卖？</p></a></li>
+    <li ga_event="focus_list_click" class="slide-item"><a href="/group/6505966048880099854/" target="_blank">
+        <img src="//p3.pstatp.com/origin/54070016ace4a315a224" alt=""> <p class="title">江苏卫视跨年李宇春大白腿惊艳 吴亦凡却靠这条裤子赚足了关注</p>
+    </a></li><li ga_event="focus_list_click" class="slide-item"><a href="/group/6505501383561576963/" target="_blank">
+    <img src="//p1.pstatp.com/origin/5405001fa317aeb9ab9a" alt=""> <p class="title">你可知道，体坛巨星们的18岁，都是什么样的？</p></a></li>
+    <li ga_event="focus_list_click" class="slide-item"><a href="/group/6505697431424860675/" target="_blank"><img src="//p3.pstatp.com/origin/54e5000be362fabbb8cf" alt="">
+        <p class="title">跨年夜，中国军人为您站岗！</p></a></li><li ga_event="focus_list_click" class="slide-item"><a href="/group/6505977088527303181/" target="_blank">
+    <img src="//p3.pstatp.com/origin/54080016ab095f782b11" alt=""> <p class="title">湖南卫视跨年TFBOYS各秀拿手曲 周笔畅尚雯婕着奇装比个性</p></a>
+</li></ul>
+    <div class="tianchong-topli"></div>
+
+    <ul class="slide-tab bui-right">
+    <li class="slide-tab-item  bui-right-1">
+    要闻
+</li><li class="slide-tab-item bui-right-2">
+    社会
+</li><li class="slide-tab-item bui-right-3">
+    娱乐
+</li><li class="slide-tab-item bui-right-4">
+    体育
+</li><li class="slide-tab-item bui-right-5">
+    军事
+</li><li class="slide-tab-item bui-right-6">
+    明星
+</li></ul>
+
+
+</div>
+
+<script>
+    $(window).ready(function(){
+        $(".slide-item").eq(0).show();
+        $('.bui-right').find('li').eq(0).css( 'background-color','red');
+        var i=0;
+
+        function fad(){
+            var m = i%6;
+            var n = (i+1)%6;
+
+            $('.bui-right').find('li').eq(m).css( 'background-color','black');
+            $('.bui-right').find('li').eq(n).css( 'background-color','red');
+            $(".slide-item").eq(m).fadeOut(500);
+            $(".slide-item").eq(n).fadeIn(500);
+
+            i++;
+
+        };
+        int = setInterval(fad,3000);
+    });
+</script>
+
+
+</html>
