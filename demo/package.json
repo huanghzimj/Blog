@@ -15,7 +15,7 @@
     "formidable": "^1.1.1",
     "markdown": "^0.5.0",
     "mongoose": "^4.10.6",
-    "redis": "^2.8.0",
+    "redis": "^3.1.1",
     "socket.io": "^2.1.0",
     "swig": "^1.4.2",
     "vue": "^2.5.16"
